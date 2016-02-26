@@ -1,0 +1,6 @@
+exe "source " . g:my_vimrc_dir . "/normal.vim"
+exe "source " . g:my_vimrc_dir . "/bundle.vim"
+exe "source " . g:my_vimrc_dir . "/vim-powerline.vim"
+exe "source " . g:my_vimrc_dir . "/Leaderf.vim"
+exe "source " . g:my_vimrc_dir . "/vimerl.vim"
+exe "source " . g:my_vimrc_dir . "/winmanager.vim"
