@@ -20,6 +20,5 @@
 set -o nounset                              # Treat unset variables as an error
 
 mkdir -p bundle
-git submodule add https://github.com/VundleVim/Vundle.vim.git bundle/Vundle.vim
-git submodule update --init --recursive
+git clone https://github.com/VundleVim/Vundle.vim.git bundle/Vundle.vim
 
