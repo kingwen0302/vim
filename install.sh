@@ -20,5 +20,7 @@
 set -o nounset                              # Treat unset variables as an error
 
 mkdir -p bundle
+CENTOS_DEPENDANT="python-devel cmake gcc-c++"
+yum install ${CENTOS_DEPENDANT} -y
 git clone https://github.com/VundleVim/Vundle.vim.git bundle/Vundle.vim
 
