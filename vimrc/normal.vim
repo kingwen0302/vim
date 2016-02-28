@@ -19,7 +19,7 @@ set autowrite
 set ai
 set si
 " set cursorline
-set cursorcolumn
+" set cursorcolumn
 set showtabline=2
 
 " 括号自动补全

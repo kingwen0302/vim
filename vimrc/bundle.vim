@@ -7,7 +7,9 @@
 set nocompatible
 filetype off
 
-set rtp+=/root/.vim/bundle/Vundle.vim/
+
+exe "set rtp+=" . g:my_vimrc_dir . "/bundle/Vundle.vim/"
+" set rtp+="" . g:my_vimrc_dir . "/bundle/Vundle.vim/"
 call vundle#rc()
 
 filetype plugin indent on
