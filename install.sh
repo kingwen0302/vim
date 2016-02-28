@@ -23,4 +23,3 @@ mkdir -p bundle
 CENTOS_DEPENDANT="vim ctags python-devel cmake gcc-c++"
 yum install ${CENTOS_DEPENDANT} -y
 git clone https://github.com/VundleVim/Vundle.vim.git bundle/Vundle.vim
-
