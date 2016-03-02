@@ -21,6 +21,8 @@ set si
 " set cursorline
 " set cursorcolumn
 set showtabline=2
+set wrap
+set display=lastline
 
 " 括号自动补全
 inoremap ( ()<LEFT>
