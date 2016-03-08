@@ -36,3 +36,14 @@ nmap <F5> :tab split <CR>
 " nmap <F3> :bdelete <CR>
 nmap <F3> :tabclose <CR>
 nmap <F8> :buffers <CR>
+
+" 增加菜单
+source $VIMRUNTIME/menu.vim
+set wildmenu
+set wildmode=list:full
+set cpo-=<
+set wcm=<C-Z>
+map <F4> :emenu <C-Z>
+
+" 增加鼠标支持
+set mouse=a
