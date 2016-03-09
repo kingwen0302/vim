@@ -46,4 +46,4 @@ set wcm=<C-Z>
 map <F4> :emenu <C-Z>
 
 " 增加鼠标支持
-set mouse=a
+" set mouse=a
