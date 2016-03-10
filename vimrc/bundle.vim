@@ -13,7 +13,7 @@ exe "set rtp+=" . g:my_vimrc_dir . "/bundle/Vundle.vim/"
 call vundle#begin(g:my_vimrc_dir . "/bundle")
 " 插件必须在#begin #end之间
 Bundle 'https://github.com/VundleVim/Vundle.vim.git'
-Bundle 'Valloric/YouCompleteMe'
+" Bundle 'Valloric/YouCompleteMe'
 Bundle 'Yggdroot/LeaderF'
 Bundle 'taglist.vim'
 Bundle 'https://github.com/Lokaltog/vim-powerline.git'
