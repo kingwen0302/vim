@@ -9,20 +9,24 @@ let g:Lf_WildIgnore = {
 let g:Lf_MruFileExclude = ['*.so','*.exe','*.beam','*.log']
 let g:Lf_WindowPosition = 2
 
+let g:allProj = {
+            \ 1:{'name':'红警[默认]', 'path':'/data/red_server/trunk/gameserver'},
+            \ 2:{'name':'宠物'      , 'path':'/data/red_server/trunk/loginserver'},
+            \ 3:{'name':'otp源码'   , 'path':'/data/otp'},
+            \}
+
 " 默认项目目录
+if !exists('g:LocalProjectID')
+    let g:LocalProjectID = 1
+endif
+let g:LocalProjectDir = g:allProj[g:LocalProjectID]['path']
+
 map <F10> :LeaderfMru<CR>
 function! LeaderfProj()
     exe "Leaderf " . g:LocalProjectDir
 endfunction
 map <F12> :call LeaderfProj()<CR>
 
-let g:allProj = {
-            \ 1:{'name':'红警[默认]', 'path':'/data/red_server/trunk/gameserver'},
-            \ 2:{'name':'宠物'      , 'path':'/data/red_server/trunk/loginserver'},
-            \}
-
-let g:LocalProjectDir = g:allProj['1']['path']
-let g:LocalProjectID = 1
 " 切换项目目录
 function! ChangeProj()
     let note = "项目列表:\n"
