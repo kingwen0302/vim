@@ -16,8 +16,7 @@
 #       CREATED: 2016年02月26日 20:32
 #      REVISION:  ---
 #===============================================================================
-
-set -o nounset                              # Treat unset variables as an error
+# set -o nounset                              # Treat unset variables as an error
 
 ## TODO
 ## 设置插件安装目录
@@ -27,13 +26,19 @@ if [ "${CUR_DIR}" == "" ]; then
 CUR_DIR=$(cd $(dirname $0); pwd)
 fi
 mkdir -p bundle
-CENTOS_DEPENDANT="vim ctags python-devel cmake gcc-c++ sdcv"
+CENTOS_DEPENDANT="git vim ctags tar bzip2 python-devel cmake gcc-c++ sdcv"
+DEBIAN_DEPENDANT="git vim vim-nox tar bzip2 ctags python-dev cmake gcc sdcv"
+if [[ "$(cat /proc/version | grep debian)" != "" ]]; then
+sudo apt install ${DEBIAN_DEPENDANT} -y
+fi
+if [[ "$(cat /proc/version | grep centos)" != "" ]]; then
 yum install ${CENTOS_DEPENDANT} -y
+fi
 git clone https://github.com/VundleVim/Vundle.vim.git ${CUR_DIR}/bundle/Vundle.vim
 ## 增加英汉字典
-mkdir -p /usr/share/stardict/dic
-wget -o dict.tar.bz2 http://abloz.com/huzheng/stardict-dic/zh_CN/stardict-stardict1.3-2.4.2.tar.bz2
-tar -xvjf dict.tar.bz2 -C /usr/share/stardict/dic
+sudo mkdir -p /usr/share/stardict/dic
+wget -O dict.tar.bz2 http://abloz.com/huzheng/stardict-dic/zh_CN/stardict-stardict1.3-2.4.2.tar.bz2
+sudo tar -xvjf dict.tar.bz2 -C /usr/share/stardict/dic
 cat > ~/.vimrc << EOF
 let g:my_vimrc_dir = "${CUR_DIR}"
 exe "source " .  g:my_vimrc_dir . "/vimrc/myvimrc"
