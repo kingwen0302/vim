@@ -28,9 +28,15 @@ fi
 mkdir -p bundle
 CENTOS_DEPENDANT="git vim ctags tar bzip2 python-devel cmake gcc-c++ sdcv"
 DEBIAN_DEPENDANT="git vim vim-nox tar bzip2 ctags python-dev cmake gcc sdcv"
+## debian
 if [[ "$(cat /proc/version | grep debian)" != "" ]]; then
 sudo apt install ${DEBIAN_DEPENDANT} -y
 fi
+## ubuntu
+if [[ "$(cat /proc/version | grep ubuntu)" != "" ]]; then
+sudo apt install ${DEBIAN_DEPENDANT} -y
+fi
+## centos
 if [[ "$(cat /proc/version | grep centos)" != "" ]]; then
 yum install ${CENTOS_DEPENDANT} -y
 fi
@@ -39,6 +45,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ${CUR_DIR}/bundle/Vundle.v
 sudo mkdir -p /usr/share/stardict/dic
 wget -O dict.tar.bz2 http://abloz.com/huzheng/stardict-dic/zh_CN/stardict-stardict1.3-2.4.2.tar.bz2
 sudo tar -xvjf dict.tar.bz2 -C /usr/share/stardict/dic
+rm dict.tar.bz2 -f
 cat > ~/.vimrc << EOF
 let g:my_vimrc_dir = "${CUR_DIR}"
 exe "source " .  g:my_vimrc_dir . "/vimrc/myvimrc"
