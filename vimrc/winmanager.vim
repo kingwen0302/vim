@@ -1,6 +1,6 @@
 " let g:winManagerWindowLayout = 'FileExplorer|TagList|BufExplorer'
 let g:winManagerWindowLayout = 'FileExplorer|BufExplorer'
-let g:winManaerWidth = 30
+let g:winManagerWidth = 30
 
 nmap <F7> :WMToggle <CR> :TlistToggle <CR>
 
