@@ -25,7 +25,6 @@ set wrap
 set display=lastline
 
 " set cmdheight=2
-
 " 括号自动补全
 inoremap ( ()<LEFT>
 inoremap [ []<LEFT>
@@ -49,3 +48,4 @@ set wcm=<C-Z>
 
 " 增加鼠标支持
 " set mouse=a
+syntax on
