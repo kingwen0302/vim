@@ -22,6 +22,7 @@ else
   Bundle 'https://github.com/kien/ctrlp.vim.git'
 endif
 Bundle 'taglist.vim'
+Bundle 'https://github.com/kingwen0302/code_complete.git'
 Bundle 'https://github.com/Lokaltog/vim-powerline.git'
 Bundle 'https://github.com/vim-scripts/winmanager.git'
 Bundle 'https://github.com/jlanzarotta/bufexplorer.git'
