@@ -14,7 +14,13 @@ call vundle#begin(g:my_vimrc_dir . "/bundle")
 " 插件必须在#begin #end之间
 Bundle 'https://github.com/VundleVim/Vundle.vim.git'
 " Bundle 'Valloric/YouCompleteMe'
-Bundle 'Yggdroot/LeaderF'
+" Leaderf/CtrlP实现同样的功能
+" Leaderf需要python支持,性能优
+if has("python3") || has("python")
+  Bundle 'Yggdroot/LeaderF'
+else
+  Bundle 'https://github.com/kien/ctrlp.vim.git'
+endif
 Bundle 'taglist.vim'
 Bundle 'https://github.com/Lokaltog/vim-powerline.git'
 Bundle 'https://github.com/vim-scripts/winmanager.git'
