@@ -11,7 +11,7 @@
 #  REQUIREMENTS: ---
 #          BUGS: ---
 #         NOTES: ---
-#        AUTHOR: YOUR NAME (), 
+#        AUTHOR: kingwen0302
 #  ORGANIZATION: 
 #       CREATED: 2016年02月26日 20:32
 #      REVISION:  ---
@@ -25,7 +25,7 @@
 if [ "${CUR_DIR}" == "" ]; then 
 CUR_DIR=$(cd $(dirname $0); pwd)
 fi
-mkdir -p bundle
+cd ${CUR_DIR} && mkdir -p bundle
 CENTOS_DEPENDANT="git vim ctags tar bzip2 python-devel cmake gcc-c++ sdcv"
 DEBIAN_DEPENDANT="git vim vim-nox tar bzip2 ctags python-dev cmake gcc sdcv"
 ## debian
