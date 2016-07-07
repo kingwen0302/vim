@@ -1,3 +1,4 @@
+exe "source " . g:my_vimrc_dir . "/vimrc/cfg.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/bundle.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/vim-powerline.vim"
 if has("python3") || has("python")

@@ -9,12 +9,6 @@ let g:Lf_WildIgnore = {
 let g:Lf_MruFileExclude = ['*.so','*.exe','*.beam','*.log']
 let g:Lf_WindowPosition = 2
 
-let g:allProj = {
-            \ 1:{'name':'红警[默认]', 'path':'/data/red_server/trunk/gameserver'},
-            \ 2:{'name':'宠物'      , 'path':'/data/red_server/trunk/loginserver'},
-            \ 3:{'name':'otp源码'   , 'path':'/data/otp'},
-            \}
-
 " 默认项目目录
 if !exists('g:LocalProjectID')
     let g:LocalProjectID = 1

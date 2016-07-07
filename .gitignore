@@ -1,3 +1,4 @@
 bundle
 *.bz2
 .netrwhist
+*.swp
