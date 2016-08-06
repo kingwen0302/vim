@@ -10,8 +10,11 @@ filetype off
 exe "set rtp+=" . g:my_vimrc_dir . "/bundle/Vundle.vim/"
 " set rtp+="" . g:my_vimrc_dir . "/bundle/Vundle.vim/"
 " call vundle#rc()
-" call vundle#begin(g:my_vimrc_dir . "/bundle")
-call vundle#begin()
+if has('win32')
+    call vundle#begin(g:my_vimrc_dir . "/bundle")
+else
+    call vundle#begin()
+endif
 " 插件必须在#begin #end之间
 Bundle 'https://github.com/VundleVim/Vundle.vim.git'
 " Bundle 'Valloric/YouCompleteMe'
