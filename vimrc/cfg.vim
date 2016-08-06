@@ -4,6 +4,7 @@ let g:allProj = {
             \ 3:{'name':'otp源码'   , 'path':'/data/otp', "search_key":"/data/otp", "search_path":{1:"/data/otp"}},
             \}
 
+
 " 项目搜寻目录
 let g:proj_path = {
 \ 1: { "key":"qqjy\\jy_server\\trunk\\cymmo"     , "path": {1:"E:/qqjy/jy_server/trunk/cymmo"} },
