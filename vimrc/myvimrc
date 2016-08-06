@@ -1,3 +1,4 @@
+exe "source " . g:my_vimrc_dir . "/vimrc/first.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/cfg.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/bundle.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/vim-powerline.vim"
@@ -6,6 +7,10 @@ if has("python3") || has("python")
 else
   exe "source " . g:my_vimrc_dir . "/vimrc/ctrlp.vim"
 endif
+if has("gui_running")
+    exe "source " . g:my_vimrc_dir . "/vimrc/gui_tab.vim"
+endif
+exe "source " . g:my_vimrc_dir . "/vimrc/hidden_menu.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/vimerl.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/winmanager.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/YouCompleteMe.vim"
@@ -13,4 +18,6 @@ exe "source " . g:my_vimrc_dir . "/vimrc/bashSupport.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/vim-lua-inspect.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/dict.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/tasklist.vim"
+exe "source " . g:my_vimrc_dir . "./vimrc/search.vim"
+exe "source " . g:my_vimrc_dir . "./vimrc/tortoisesvn.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/normal.vim"

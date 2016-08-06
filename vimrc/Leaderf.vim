@@ -15,12 +15,6 @@ if !exists('g:LocalProjectID')
 endif
 let g:LocalProjectDir = g:allProj[g:LocalProjectID]['path']
 
-map <F10> :LeaderfMru<CR>
-function! LeaderfProj()
-    exe "Leaderf " . g:LocalProjectDir
-endfunction
-map <F12> :call LeaderfProj()<CR>
-
 " 切换项目目录
 function! ChangeProj()
     let note = "项目列表:\n"
@@ -44,3 +38,4 @@ function! ChangeProj()
     echo "\n切换后的目录:" . g:LocalProjectDir . "\n"
 endfunction
 map <silent> <F11> :call ChangeProj() <CR>
+nmap <C-Enter> :LeaderfMru<cr>
