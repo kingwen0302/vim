@@ -10,7 +10,8 @@ filetype off
 exe "set rtp+=" . g:my_vimrc_dir . "/bundle/Vundle.vim/"
 " set rtp+="" . g:my_vimrc_dir . "/bundle/Vundle.vim/"
 " call vundle#rc()
-call vundle#begin(g:my_vimrc_dir . "/bundle")
+" call vundle#begin(g:my_vimrc_dir . "/bundle")
+call vundle#begin()
 " 插件必须在#begin #end之间
 Bundle 'https://github.com/VundleVim/Vundle.vim.git'
 " Bundle 'Valloric/YouCompleteMe'
@@ -25,7 +26,9 @@ Bundle 'taglist.vim'
 Bundle 'https://github.com/foursking/vim-doc-cn.git'
 Bundle 'https://github.com/mbbill/fencview.git'
 Bundle 'https://github.com/kingwen0302/code_complete.git'
-" Bundle 'https://github.com/Lokaltog/vim-powerline.git'
+if !has('win32')
+    Bundle 'https://github.com/Lokaltog/vim-powerline.git'
+endif
 Bundle 'https://github.com/vim-scripts/winmanager.git'
 Bundle 'https://github.com/jlanzarotta/bufexplorer.git'
 Bundle 'https://github.com/kingwen0302/erlang_skel.git'

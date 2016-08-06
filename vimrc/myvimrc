@@ -2,17 +2,17 @@ exe "source " . g:my_vimrc_dir . "/vimrc/first.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/cfg.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/bundle.vim"
 if has("win32")
-    exe "source " . g:my_vimrc_dir . "/vimrc/statusline.vim"
+   exe "source " . g:my_vimrc_dir . "/vimrc/statusline.vim"
 else
-    exe "source " . g:my_vimrc_dir . "/vimrc/vim-powerline.vim"
+   exe "source " . g:my_vimrc_dir . "/vimrc/vim-powerline.vim"
 endif
 if has("python3") || has("python")
-  exe "source " . g:my_vimrc_dir . "/vimrc/Leaderf.vim"
+   exe "source " . g:my_vimrc_dir . "/vimrc/Leaderf.vim"
 else
-  exe "source " . g:my_vimrc_dir . "/vimrc/ctrlp.vim"
+   exe "source " . g:my_vimrc_dir . "/vimrc/ctrlp.vim"
 endif
 if has("gui_running")
-    exe "source " . g:my_vimrc_dir . "/vimrc/gui_tab.vim"
+   exe "source " . g:my_vimrc_dir . "/vimrc/gui_tab.vim"
 endif
 exe "source " . g:my_vimrc_dir . "/vimrc/hidden_menu.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/vimerl.vim"

@@ -5,4 +5,4 @@
 set laststatus=2
 set t_Co=256
 let g:Powerline_symbols = 'fancy'
-let Powerline_symbols = 'compatible'
+" let Powerline_symbols = 'compatible'
