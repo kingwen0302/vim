@@ -10,11 +10,7 @@ filetype off
 exe "set rtp+=" . g:my_vimrc_dir . "/bundle/Vundle.vim/"
 " set rtp+="" . g:my_vimrc_dir . "/bundle/Vundle.vim/"
 " call vundle#rc()
-if has('win32')
-    call vundle#begin(g:my_vimrc_dir . "/bundle")
-else
-    call vundle#begin()
-endif
+call vundle#begin(g:my_vimrc_dir . "/bundle")
 " 插件必须在#begin #end之间
 Bundle 'https://github.com/VundleVim/Vundle.vim.git'
 " Bundle 'Valloric/YouCompleteMe'
@@ -43,9 +39,12 @@ Bundle 'https://github.com/vim-scripts/matrix.vim--Yang.git'
 Bundle 'https://github.com/vim-scripts/bash-support.vim.git'
 Bundle 'https://github.com/elixir-lang/vim-elixir.git'
 Bundle 'https://github.com/vim-scripts/genutils.git'
-Bundle 'https://github.com/vim-scripts/Tortoise.git'
+if has('win32')
+    Bundle 'https://github.com/kingwen0302/Tortoise.git'
+endif
+
+" Bundle 'https://github.com/xolox/vim-misc.git'
 " Bundle 'https://github.com/vim-scripts/AnsiEsc.vim.git'
-Bundle 'https://github.com/xolox/vim-misc.git'
 " Bundle 'https://github.com/xolox/vim-lua-ftplugin.git'
 " Bundle 'https://github.com/xolox/vim-lua-inspect.git'
 " Bundle 'https://github.com/vim-scripts/DrawIt.git'
@@ -53,5 +52,6 @@ Bundle 'https://github.com/xolox/vim-misc.git'
 " Bundle 'https://github.com/vim-scripts/FuzzyFinder.git'
 " Bundle 'jlanzarotta/bufexplorer'
 " Bundle 'https://github.com/fholgado/minibufexpl.vim.git'
+
 call vundle#end()
 filetype plugin indent on
