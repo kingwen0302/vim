@@ -32,7 +32,7 @@ set autoindent
 colo desert
 "set guifont=Monaco:h14
 "set guifont=Fixedsys:h12
-set guifont=Consolas:h16
+set guifont=Consolas:h18
 
 set nu
 set whichwrap+=<,>,h,l

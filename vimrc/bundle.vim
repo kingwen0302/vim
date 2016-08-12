@@ -21,6 +21,11 @@ if has("python3") || has("python")
 else
   Bundle 'https://github.com/kien/ctrlp.vim.git'
 endif
+
+if has("python3") || has("python")
+    Bundle 'https://github.com/nicoraffo/conque.git'
+endif
+
 Bundle 'taglist.vim'
 Bundle 'https://github.com/foursking/vim-doc-cn.git'
 Bundle 'https://github.com/mbbill/fencview.git'
