@@ -48,7 +48,12 @@ Bundle 'https://github.com/vim-scripts/genutils.git'
 if has('win32')
     Bundle 'https://github.com/kingwen0302/Tortoise.git'
 endif
+Bundle 'https://github.com/danro/rename.vim.git'
+Bundle 'https://github.com/kingwen0302/vim-autoformat.git'
+Bundle 'https://github.com/luochen1990/rainbow.git'
 
+" Bundle 'https://github.com/wakatime/vim-wakatime.git'
+" Bundle 'https://github.com/scrooloose/syntastic.git'
 " Bundle 'https://github.com/xolox/vim-misc.git'
 " Bundle 'https://github.com/vim-scripts/AnsiEsc.vim.git'
 " Bundle 'https://github.com/xolox/vim-lua-ftplugin.git'

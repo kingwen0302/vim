@@ -1,16 +1,33 @@
 exe "source " . g:my_vimrc_dir . "/vimrc/first.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/cfg.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/bundle.vim"
-if has("win32")
-   exe "source " . g:my_vimrc_dir . "/vimrc/statusline.vim"
-else
-   exe "source " . g:my_vimrc_dir . "/vimrc/vim-powerline.vim"
-endif
-if has("python3") || has("python")
+" if has("win32")
+"    exe "source " . g:my_vimrc_dir . "/vimrc/statusline.vim"
+" else
+"    exe "source " . g:my_vimrc_dir . "/vimrc/vim-powerline.vim"
+" endif
+exe "source " . g:my_vimrc_dir . "/vimrc/statusline.vim"
+
+" 检测是否有python
+try 
+    exe "python 1+1" 
+    let g:has_python = 1 
+catch
+    :
+endtry
+try 
+    exe "python3 1+1"
+    let g:has_python = 1
+catch
+    :
+endtry
+
+if g:has_python == 1
    exe "source " . g:my_vimrc_dir . "/vimrc/Leaderf.vim"
 else
    exe "source " . g:my_vimrc_dir . "/vimrc/ctrlp.vim"
 endif
+
 if has("gui_running")
    exe "source " . g:my_vimrc_dir . "/vimrc/gui_tab.vim"
 endif
@@ -24,4 +41,6 @@ exe "source " . g:my_vimrc_dir . "/vimrc/dict.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/tasklist.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/search.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/tortoisesvn.vim"
+" exe "source " . g:my_vimrc_dir . "/vimrc/syntastic.vim"
+exe "source " . g:my_vimrc_dir . "/vimrc/rainbow.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/normal.vim"

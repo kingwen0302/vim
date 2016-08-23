@@ -46,6 +46,7 @@ sudo mkdir -p /usr/share/stardict/dic
 wget -O dict.tar.bz2 http://abloz.com/huzheng/stardict-dic/zh_CN/stardict-stardict1.3-2.4.2.tar.bz2
 sudo tar -xvjf dict.tar.bz2 -C /usr/share/stardict/dic
 rm dict.tar.bz2 -f
+
 cat > ~/.vimrc << EOF
 let g:my_vimrc_dir = "${CUR_DIR}"
 exe "source " .  g:my_vimrc_dir . "/vimrc/myvimrc"
