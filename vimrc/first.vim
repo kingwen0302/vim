@@ -2,15 +2,17 @@ if has('win32')
     "set bomb
     set encoding=utf-8
     " 设置菜单编码
-    set langmenu="zh_cn.utf-8"
-    language message zh_cn.utf-8
+    set langmenu="zh_CN.UTF-8"
+    language messages zh_CN.UTF-8
     set fileencodings=utf-8,gbk,chinese,gb2312,gb18030,cp936,ucs-bom,euc-jp,euc-kr
     set fileencoding=utf-8
     set termencoding=gbk
     " 支持ctrl-c, ctrl-v
     source $VIMRUNTIME/mswin.vim
 else
-    set langmenu="zh_cn.utf-8"
+    set langmenu="zh_CN.UTF-8"
+    language messages zh_CN.UTF-8
     set fileencodings=utf-8,gbk,chinese,gb2312,gb18030,cp936,ucs-bom,euc-jp,euc-kr
     set termencoding=utf-8
+    source $VIMRUNTIME/mswin.vim
 endif

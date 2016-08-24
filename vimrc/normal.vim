@@ -83,6 +83,7 @@ nmap <F8> :buffers <CR>
 map <F3> :emenu <C-Z>
 
 " 增加菜单
+source $VIMRUNTIME/menu.vim
 set wildmenu
 set wildmode=list:full
 set cpo-=<
