@@ -10,5 +10,7 @@ if has('win32')
     " 支持ctrl-c, ctrl-v
     source $VIMRUNTIME/mswin.vim
 else
+    set langmenu="zh_cn.utf-8"
+    set fileencodings=utf-8,gbk,chinese,gb2312,gb18030,cp936,ucs-bom,euc-jp,euc-kr
     set termencoding=utf-8
 endif
