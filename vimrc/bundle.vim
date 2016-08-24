@@ -16,13 +16,13 @@ Bundle 'https://github.com/VundleVim/Vundle.vim.git'
 " Bundle 'Valloric/YouCompleteMe'
 " Leaderf/CtrlP实现同样的功能
 " Leaderf需要python支持,性能优
-if has("python3") || has("python")
+if g:has_python == 1
   Bundle 'Yggdroot/LeaderF'
 else
   Bundle 'https://github.com/kien/ctrlp.vim.git'
 endif
 
-if has("python3") || has("python")
+if g:has_python == 1
     Bundle 'https://github.com/nicoraffo/conque.git'
 endif
 
