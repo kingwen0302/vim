@@ -18,7 +18,7 @@ let g:Lf_WindowPosition = 2
 if !exists('g:LocalProjectID')
     let g:LocalProjectID = 1
 endif
-let g:LocalProjectDir = g:allProj[g:LocalProjectID]['path']
+let g:LocalProjectDir = g:proj_search[g:LocalProjectID]['path']
 
 map <F10> :CtrlPMRUFiles<CR>
 function! LeaderfProj()
@@ -29,7 +29,7 @@ map <F12> :call LeaderfProj()<CR>
 " 切换项目目录
 function! ChangeProj()
     let note = "项目列表:\n"
-    for [id, v] in items(g:allProj)
+    for [id, v] in items(g:proj_search)
         let note .= id . "-" . v['name'] . "\n"
     endfor
     " 高亮显示
@@ -38,14 +38,15 @@ function! ChangeProj()
     let note .= "\n当前选择:" . g:LocalProjectID . "\n"
     let note .= "请选择(Ctrl-C取消):"
     let selectID = input(note, "")
-    let projID = get(g:allProj, selectID, {})
+    let projID = get(g:proj_search, selectID, {})
     if projID == {}
         let selectID = g:LocalProjectID
         echo "\n未切换"
         return
     endif
     let g:LocalProjectID = selectID
-    let g:LocalProjectDir = g:allProj[selectID]['path']
+    let g:LocalProjectDir = g:proj_search[selectID]['path']
+    exe "cd " . g:LocalProjectDir
     echo "\n切换后的目录:" . g:LocalProjectDir . "\n"
 endfunction
 map <silent> <F11> :call ChangeProj() <CR>

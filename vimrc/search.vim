@@ -1,6 +1,6 @@
 " function! GetDirs()
 "     let dir = expand("%:p")
-"     for [id, config] in items(g:allProj)
+"     for [id, config] in items(g:proj_search)
 "         let is_match = 1
 "         let key     = config["search_key"]
 "         let path    = config["search_path"]
@@ -47,10 +47,10 @@
 
 function! GetDirs()
     let dir = expand("%:p")
-    for [ind, pa] in items(g:proj_path)
+    for [ind, pa] in items(g:proj_search)
         let is_match = 1
-        let key = pa["key"]
-        let FXDir = pa["path"]
+        let key = pa["search_key"]
+        let FXDir = pa["search_path"]
         for key_1 in split(key, "\\")
             if matchstr(dir, key_1) != ""
                 let is_match = is_match && 1
