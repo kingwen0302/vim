@@ -52,6 +52,9 @@ Bundle 'https://github.com/danro/rename.vim.git'
 Bundle 'https://github.com/kingwen0302/vim-autoformat.git'
 Bundle 'https://github.com/luochen1990/rainbow.git'
 
+Plugin 'racer-rust/vim-racer'
+Plugin 'rust-lang/rust.vim'
+
 " Bundle 'https://github.com/wakatime/vim-wakatime.git'
 " Bundle 'https://github.com/scrooloose/syntastic.git'
 " Bundle 'https://github.com/xolox/vim-misc.git'

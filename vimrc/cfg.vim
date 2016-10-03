@@ -10,6 +10,7 @@ let g:proj_path = {
 \ 1: { "key":"qqjy\\jy_server\\trunk\\cymmo"     , "path": {1:"E:/qqjy/jy_server/trunk/cymmo"} },
 \ 2: { "key":"qqjy\\server\\trunk"               , "path": {1:"E:/qqjy/server/trunk"} },
 \ 3: { "key":"qqjy\\public"                      , "path": {1:"E:/qqjy/public"} },
+\ 4: { "key":"qqjy\\server\\branches\\cymmo_20160930_002610000", "path": {1:"E:/qqjy/server/branches/cymmo_20160930_002610000"} },
 \}
 
 " 项目常用svn目录
@@ -17,6 +18,7 @@ let g:proj_svn_path = {
             \ 1: {"name":"server"  , "path":"E:/qqjy/server/trunk"}  ,
             \ 2: {"name":"协议"    , "path":"E:/qqjy/public"},
             \ 3: {"name":"jy"      , "path":"E:/qqjy/jy_server/trunk/cymmo"},
+            \ 4: {"name":"版署服"  , "path":"E:/qqjy/server/branches/cymmo_20160930_002610000"},
             \}
 
 let g:proj_svn_path_2 = {
