@@ -13,7 +13,7 @@ let g:Lf_WindowPosition = 2
 if !exists('g:LocalProjectID')
     let g:LocalProjectID = 1
 endif
-let g:LocalProjectDir = g:proj_search[g:LocalProjectID]['path']
+let g:LocalProjectDir = g:proj_search[g:LocalProjectID][1]['path']
 
 " 切换项目目录
 function! ChangeProj()
