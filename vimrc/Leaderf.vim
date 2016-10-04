@@ -11,14 +11,16 @@ let g:Lf_WindowPosition = 2
 
 " 默认项目目录
 if !exists('g:LocalProjectID')
-    let g:LocalProjectID = 1
+    let g:LocalProjectID = 0
 endif
 let g:LocalProjectDir = g:proj_search[g:LocalProjectID][1]['path']
 
 " 切换项目目录
 function! ChangeProj()
     let note = "项目列表:\n"
-    for [id, v] in items(g:proj_search)
+    for value in g:proj_search
+        let id = value[0]
+        let v  = value[1]
         let note .= id . "-" . v['name'] . "\n"
     endfor
     " 高亮显示
@@ -27,14 +29,14 @@ function! ChangeProj()
     let note .= "\n当前选择:" . g:LocalProjectID . "\n"
     let note .= "请选择(Ctrl-C取消):"
     let selectID = input(note, "")
-    let projID = get(g:proj_search, selectID, {})
-    if projID == {}
+    let projID = get(g:proj_search, selectID, [])
+    if projID == []
         let selectID = g:LocalProjectID
         echo "\n未切换"
         return
     endif
     let g:LocalProjectID = selectID
-    let g:LocalProjectDir = g:proj_search[selectID]['path']
+    let g:LocalProjectDir = g:proj_search[selectID][1]['path']
     exe "cd " . g:LocalProjectDir
     echo "\n切换后的目录:" . g:LocalProjectDir . "\n"
 endfunction
