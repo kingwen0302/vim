@@ -28,6 +28,16 @@ let g:menu_list = [
             \        ]
             \    ],
             \    [
+            \        "SVN",
+            \        [
+            \            {"name" : "U(&P)DATE", "os" : "all", "view": "<TAB>\:SVN\\ update", "cmd" : ":SVN update . <CR>" },
+            \            {"name" : "(&A)DD",    "os" : "all", "view": "<TAB>\:SVN\\ add",    "cmd" : ":SVN add %<CR>" },
+            \            {"name" : "(&D)IFF",   "os" : "all", "view": "<TAB>\:SVN\\ diff",   "cmd" : ":SVN diff %<CR>" },
+            \            {"name" : "(&C)OMMIT", "os" : "all", "view": "<TAB>\:SVN\\ commit", "cmd" : ":SVN commit %<CR>" },
+            \            {"name" : "(&L)OG",    "os" : "all", "view": "<TAB>\:SVN\\ log",    "cmd" : ":SVN log %<CR>" },
+            \        ]
+            \    ],
+            \    [
             \        "M杂项",
             \        [
             \            {"name" : "调用C(&M)D",                 "os" : "all", "view": "<Tab>\:!cmd\\ /K\\ 目录", "cmd" : ":!start cmd /K \"chcp 936 && pushd expand('%:p:h')\"<CR>" },
@@ -42,16 +52,6 @@ let g:menu_list = [
             \            {"name" : "转为dos编码格式" ,           "os" : "all", "view": "",                        "cmd" : ":set fileformat=dos<CR>" },
             \            {"name" : "-SEP2-" ,                    "os" : "all", "view": "",                        "cmd" : "<Nop>" },
             \            {"name" : "去掉^M" ,                    "os" : "all", "view": "",                        "cmd" : ":%s/\r\+$//e<CR>" },
-            \        ]
-            \    ],
-            \    [
-            \        "SVN",
-            \        [
-            \            {"name" : "U(&P)DATE", "os" : "all", "view": "<TAB>\:SVN\\ update", "cmd" : ":SVN update . <CR>" },
-            \            {"name" : "(&A)DD",    "os" : "all", "view": "<TAB>\:SVN\\ add",    "cmd" : ":SVN add %<CR>" },
-            \            {"name" : "(&D)IFF",   "os" : "all", "view": "<TAB>\:SVN\\ diff",   "cmd" : ":SVN diff %<CR>" },
-            \            {"name" : "(&C)OMMIT", "os" : "all", "view": "<TAB>\:SVN\\ commit", "cmd" : ":SVN commit %<CR>" },
-            \            {"name" : "(&L)OG",    "os" : "all", "view": "<TAB>\:SVN\\ log",    "cmd" : ":SVN log %<CR>" },
             \        ]
             \    ],
             \]
