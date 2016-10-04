@@ -17,9 +17,9 @@ let g:proj_search = {
     \},
 \ 3: { 
         \ "name":"Q版[协议]", 
-        \ "path":"E:/qqjy/public",
-        \ "search_key":"qqjy\\public", 
-        \ "search_path": {1:"E:/qqjy/public"} 
+        \ "path":"E:/qqjy/public/proto",
+        \ "search_key":"qqjy\\public\\proto", 
+        \ "search_path": {1:"E:/qqjy/public/proto"} 
     \},
 \ 4: { 
         \ "name":"Q版[版署服]",
@@ -38,17 +38,16 @@ let g:proj_search = {
 " 项目常用svn目录
 let g:proj_svn_path = {
             \ 1: {"name":"server"  , "path":"E:/qqjy/server/trunk"},
-            \ 2: {"name":"协议"    , "path":"E:/qqjy/public"},
+            \ 2: {"name":"协议"    , "path":"E:/qqjy/public/proto"},
             \ 3: {"name":"jy"      , "path":"E:/qqjy/jy_server/trunk/cymmo"},
             \ 4: {"name":"版署服"  , "path":"E:/qqjy/server/branches/cymmo_20160930_002610000"},
+            \ 5: {"name":"VIM配置" , "path":"D:/myvim"},
             \}
 
 let g:proj_svn_path_3 = {
-            \ 1: {"name":"vim"     , "path":"D:/myvim"}
             \}
 
 " 所有项目的配置
 let g:proj_all = {
-            \ 1: {"name":"Q版", "conf":g:proj_svn_path},
-            \ 3: {"name":"VIM配置", "conf":g:proj_svn_path_3},
+            \ 1: {"name":"P项目", "conf":g:proj_svn_path},
             \}
