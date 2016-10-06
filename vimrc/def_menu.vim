@@ -7,6 +7,16 @@
 " --------------------------------
 let g:menu_list = [
             \    [
+            \        "Subversion",
+            \        [
+            \            {"name" : "U(&P)DATE", "os" : "all", "view": "<TAB>\:SVN\\ update", "cmd" : ":SVN update . <CR>" },
+            \            {"name" : "(&A)DD",    "os" : "all", "view": "<TAB>\:SVN\\ add",    "cmd" : ":SVN add %<CR>" },
+            \            {"name" : "(&D)IFF",   "os" : "all", "view": "<TAB>\:SVN\\ diff",   "cmd" : ":SVN diff %<CR>" },
+            \            {"name" : "(&C)OMMIT", "os" : "all", "view": "<TAB>\:SVN\\ commit", "cmd" : ":SVN commit %<CR>" },
+            \            {"name" : "(&L)OG",    "os" : "all", "view": "<TAB>\:SVN\\ log",    "cmd" : ":SVN log %<CR>" },
+            \        ]
+            \    ],
+            \    [
             \        "F字体+主题",
             \        [
             \            {"name" : "&Fixedsys字体",      "os" : "win32", "view": "<TAB>\:set\\ guifont=Fixedsys\:h12",      "cmd" : ":set guifont=Fixedsys:h12<CR>" },
@@ -25,16 +35,6 @@ let g:menu_list = [
             \            {"name" : "&delek主题",         "os" : "all", "view": "<TAB>\:colo\\ delek",                     "cmd" : ":colo delek<CR>" },
             \            {"name" : "&peachpuff主题",     "os" : "all", "view": "<TAB>\:colo\\ peachpuff",                 "cmd" : ":colo peachpuff<CR>" },
             \            {"name" : "&zellner主题",       "os" : "all", "view": "<TAB>\:colo\\ zellner",                   "cmd" : ":colo zellner<CR>" },
-            \        ]
-            \    ],
-            \    [
-            \        "SVN",
-            \        [
-            \            {"name" : "U(&P)DATE", "os" : "all", "view": "<TAB>\:SVN\\ update", "cmd" : ":SVN update . <CR>" },
-            \            {"name" : "(&A)DD",    "os" : "all", "view": "<TAB>\:SVN\\ add",    "cmd" : ":SVN add %<CR>" },
-            \            {"name" : "(&D)IFF",   "os" : "all", "view": "<TAB>\:SVN\\ diff",   "cmd" : ":SVN diff %<CR>" },
-            \            {"name" : "(&C)OMMIT", "os" : "all", "view": "<TAB>\:SVN\\ commit", "cmd" : ":SVN commit %<CR>" },
-            \            {"name" : "(&L)OG",    "os" : "all", "view": "<TAB>\:SVN\\ log",    "cmd" : ":SVN log %<CR>" },
             \        ]
             \    ],
             \    [

@@ -48,21 +48,34 @@ let g:proj_search = [
 \            "search_path": {1:"D:/myvim"} 
 \        }
 \    ],
+\    [
+\        5,
+\        {  
+\            "name":"BLOG",
+\            "path":"E:/blog/blog_test/blog_source",
+\            "search_key":"blog\\blog_test\\blog_source",
+\            "search_path": {1:"E:/blog/blog_test/blog_source"} 
+\        }
+\    ],
 \]
 
 " 项目常用svn目录
 let g:proj_svn_path = [
-            \ {"name":"server"  , "path":"E:/qqjy/server/trunk"},
-            \ {"name":"协议"    , "path":"E:/qqjy/public/proto"},
-            \ {"name":"jy"      , "path":"E:/qqjy/jy_server/trunk/cymmo"},
-            \ {"name":"版署服"  , "path":"E:/qqjy/server/branches/cymmo_20160930_002610000"},
-            \ {"name":"VIM配置" , "path":"D:/myvim"},
+            \ {"name": "server"  , "path": "E:/qqjy/server/trunk"},
+            \ {"name": "协议"    , "path": "E:/qqjy/public/proto"},
+            \ {"name": "jy"      , "path": "E:/qqjy/jy_server/trunk/cymmo"},
+            \ {"name": "版署服"  , "path": "E:/qqjy/server/branches/cymmo_20160930_002610000"},
+            \ {"name": "VIM配置" , "path": "D:/myvim"},
+            \ {"name": "BLOG"    , "path": "E:/blog/blog_test/blog_source"},
             \]
 
 let g:proj_svn_path_3 = [
+            \ {"name": "rust"    , "path": "c:/users/mingilin/rust_learn/project"},
+            \ {"name": "VIM配置" , "path": "c:/software/myvim"},
             \]
 
 " 所有项目的配置
 let g:proj_all = [
-            \ {"name":"P项目", "conf":g:proj_svn_path},
+            \ {"name": "☆☆☆项目名字一定要长☆☆☆",  "conf": g:proj_svn_path},
+            \ {"name": "个人电脑项目",                  "conf": g:proj_svn_path_3},
             \]
