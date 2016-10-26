@@ -5,7 +5,11 @@ function! GetDirs()
         let pa  = value[1]
         let is_match = 1
         let key = pa["search_key"]
-        let FXDir = pa["search_path"]
+        if has("win32") 
+            let FXDir = pa["search_path"]
+        else
+            let FXDir = pa["linux_search_path"]
+        endif
         for key_1 in split(key, "\\")
             if matchstr(dir, key_1) != ""
                 let is_match = is_match && 1

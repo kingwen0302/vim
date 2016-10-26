@@ -64,9 +64,11 @@ set hlsearch
 set noeb         " 去掉输入错误的提示声音
 set ruler        " 打开状态栏标尺
 set magic        " 设置魔术
-set cursorline   " 高亮当前行
-set cursorcolumn " 高亮当前列 
-set cc=80        " 显示对齐线
+if has("win32")
+    set cursorline   " 高亮当前行
+    set cursorcolumn " 高亮当前列 
+    set cc=80        " 显示对齐线
+endif
 
 set tags=tags;
 

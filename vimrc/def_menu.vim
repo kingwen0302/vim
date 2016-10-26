@@ -35,6 +35,11 @@ let g:menu_list = [
             \            {"name" : "&delek主题",         "os" : "all", "view": "<TAB>\:colo\\ delek",                     "cmd" : ":colo delek<CR>" },
             \            {"name" : "&peachpuff主题",     "os" : "all", "view": "<TAB>\:colo\\ peachpuff",                 "cmd" : ":colo peachpuff<CR>" },
             \            {"name" : "&zellner主题",       "os" : "all", "view": "<TAB>\:colo\\ zellner",                   "cmd" : ":colo zellner<CR>" },
+            \        
+            \            {"name" : "-SEP2-" ,            "os" : "win32", "view": "", "cmd" : "<Nop>" },
+            \            {"name" : "&透明225",           "os" : "win32", "view": "", "cmd" : ":call libcallnr('vimtweak.dll', 'SetAlpha', 225) <CR>" },
+            \            {"name" : "&不透明",            "os" : "win32", "view": "", "cmd" : ":call libcallnr('vimtweak.dll', 'SetAlpha', 255) <CR>" },
+            \            {"name" : "&Cygwin",            "os" : "win32", "view": "", "cmd" : ":ConqueTerm C:\\cygwin64\\Cygwin.bat<CR>" },
             \        ]
             \    ],
             \    [
