@@ -46,19 +46,44 @@ endfunction
 function! DirsToPath()
     let path = ""
     for [key, dir] in items(g:FXDirs)
-        let path = path . " " . dir . "/**/*.[ehp][rht][lpm]"
+        let path = path . " " . dir . "/**/*.[ehpc][rhtf][lpmg]"
+    endfor
+    return path
+endfunction
+
+function! DirsToPath_1()
+    let path = ""
+    for [key, dir] in items(g:FXDirs)
+        let path = path . " " . dir
     endfor
     return path
 endfunction
 
 map <F6> :call FindFile()<CR>
 
-function! SearchWord()
+function! SearchWordByGrep()
     let g:FXDirs = GetDirs()
-    let Path = DirsToPath()
-    exe "vimgrep \"\\<" . expand("<cword>") . "\\>\" " . Path 
+    " 使用grep查询
+    " 飞一般的速度
+    let Path = DirsToPath_1()
+    " -n 显示行号
+    " -r 递归
+    " -a 以文本文件查询
+    " -H 打印文件名
+    " --include 包含文件
+    exe  "Grep -nraH --include=*.[ehpc][rhtf][lpmg] -i " . expand("<cword>") . " " . Path 
+    copen
 endfunction
-map <F9> :call SearchWord()<CR>
+map <F9> :call SearchWordByGrep()<CR>
+
+function! SearchWordByVimGrep()
+    let g:FXDirs = GetDirs()
+    " 使用vimgrep查询
+    " 速度较慢,但是兼容好
+    let Path = DirsToPath()
+    exe "vimgrep \"\\<" . expand("<cword>") . "\\>\" " . Path
+endfunction
+map <A-F9> :call SearchWordByVimGrep()<CR>
 
 function! SearchWordDialog()
   let str = inputdialog("查询", expand("%:t:r") . ":" . expand("<cword>"))

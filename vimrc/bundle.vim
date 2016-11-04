@@ -52,6 +52,8 @@ endif
 Bundle 'https://github.com/danro/rename.vim.git'
 Bundle 'https://github.com/kingwen0302/vim-autoformat.git'
 Bundle 'https://github.com/luochen1990/rainbow.git'
+Bundle 'https://github.com/skywind3000/asyncrun.vim.git'
+Bundle 'https://github.com/vim-scripts/grep.vim.git'
 
 Plugin 'racer-rust/vim-racer'
 Plugin 'rust-lang/rust.vim'
