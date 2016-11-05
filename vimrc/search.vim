@@ -65,13 +65,25 @@ function! SearchWordByGrep()
     let g:FXDirs = GetDirs()
     " 使用grep查询
     " 飞一般的速度
-    let Path = DirsToPath_1()
-    " -n 显示行号
-    " -r 递归
-    " -a 以文本文件查询
-    " -H 打印文件名
-    " --include 包含文件
-    exe  "Grep -nraH --include=*.[ehpc][rhtf][lpmg] -i " . expand("<cword>") . " " . Path 
+    let wd = expand("<cword>")
+    let len1 = strlen(wd)
+    let len2 = strlen(substitute(wd, ".", "x", "g"))
+    " 中文字符串 - vimgrep
+    " 英文字符串 - grep
+    if len1 == len2
+        let Path = DirsToPath_1()
+        " -n 显示行号
+        " -r 递归
+        " -a 以文本文件查询
+        " -H 打印文件名
+        " --include 包含文件
+        " -w 全字匹配
+        " -i 忽略大小写
+        exe  "Grep -nraHwi --include=*.[ehpc][rhtf][lpmg] " . expand("<cword>") . " " . Path 
+    else
+        let Path = DirsToPath()
+        exe "vimgrep \"\\<" . expand("<cword>") . "\\>\" " . Path
+    endif
     copen
 endfunction
 map <F9> :call SearchWordByGrep()<CR>
