@@ -107,7 +107,7 @@ function! SearchWordDialog()
         " --include 包含文件
         " -w 全字匹配
         " -i 忽略大小写
-        try | exe  "Grep -nraHwi --include=*.[ehpc][rhtf][lpmg] " . str . " " . Path |catch | | endtry
+        try | exe  "Grep -nraHi --include=*.[ehpc][rhtf][lpmg] " . str . " " . Path |catch | | endtry
     else
         let Path = DirsToPath()
         try | execute "vimgrep \"" . str . "\" " . Path | catch | | endtry
