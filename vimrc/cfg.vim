@@ -17,9 +17,9 @@ let g:proj_search = [
 \        1,
 \        { 
 \            "name":"Q版[服务端]" ,
-\            "path":"E:/qqjy/server/trunk",
+\            "path":"D:/qqjy/server/trunk",
 \            "search_key":"qqjy\\server\\trunk", 
-\            "search_path": {1:"E:/qqjy/server/trunk"},
+\            "search_path": {1:"D:/qqjy/server/trunk"},
 \            "linux_search_path": {1:"/cygdrive/e/qqjy/server/trunk"} 
 \        }
 \    ],
