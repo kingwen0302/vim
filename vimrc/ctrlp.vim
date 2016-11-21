@@ -20,12 +20,6 @@ if !exists('g:LocalProjectID')
 endif
 let g:LocalProjectDir = g:proj_search[g:LocalProjectID][1]['path']
 
-map <F10> :CtrlPMRUFiles<CR>
-function! LeaderfProj()
-    exe "CtrlP " . g:LocalProjectDir
-endfunction
-map <F12> :call LeaderfProj()<CR>
-
 " 切换项目目录
 function! ChangeProj()
     let note = "项目列表:\n"
@@ -52,3 +46,4 @@ function! ChangeProj()
     echo "\n切换后的目录:" . g:LocalProjectDir . "\n"
 endfunction
 map <silent> <F11> :call ChangeProj() <CR>
+nmap <C-Enter> :CtrlPMRUFiles<CR>

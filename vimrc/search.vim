@@ -121,4 +121,14 @@ function! LeaderF_func()
     let FXDir = GetDirs()
     exe "Leaderf " . FXDir['1']
 endfunction
-map <F12> :call LeaderF_func()<CR>
+
+function! CtrlP_func()
+    let FXDir = GetDirs()
+    exe "CtrlP " . FXDir['1']
+endfunction
+
+if g:has_python == 1
+    map <F12> :call LeaderF_func()<CR>
+else
+    map <F12> :call CtrlP_func()<CR>
+endif
