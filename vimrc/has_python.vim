@@ -12,3 +12,9 @@ try
 catch
     :
 endtry
+
+if g:has_python == 1
+    let g:leaderf_or_ctrlp = "Leaderf"
+else
+    let g:leaderf_or_ctrlp = "CtrlP"
+endif
