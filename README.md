@@ -21,10 +21,10 @@ let g:my_vimrc_dir = "~/.vim"
 exe "source " .  g:my_vimrc_dir . "/vimrc/myvimrc"
 ```
 
-1. 使用Bundle安装插件
+1. 使用vim-plug安装插件
 
-  > `打开vim`->`BundleInstall`->`完成`  
-  > `进入g:my_vimrc_dir/bundle/YouCompleteMe/`->`./install.sh` 
+  > `打开vim`->`PlugInstall`->`完成`  
+  > `进入g:my_vimrc_dir/Plug/YouCompleteMe/`->`./install.sh` 
 
 1. 配置
 
