@@ -13,4 +13,4 @@ set hidden
 "" 这一行指的是你编译出来的racer所在的路径
 let g:racer_cmd = "C:/Users/Administrator/.cargo\bin/racer.exe"
 "" 这里填写的就是我们在1.2.1中让你记住的目录
-let $RUST_SRC_PATH="C:/Program Files/Rust stable GNU 1.11/rustc-1.11.0/src"
+let $RUST_SRC_PATH="d:/rust_source/src"

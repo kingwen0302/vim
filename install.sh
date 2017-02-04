@@ -40,7 +40,11 @@ fi
 if [[ "$(cat /proc/version | grep centos)" != "" ]]; then
 yum install ${CENTOS_DEPENDANT} -y
 fi
-git clone https://github.com/VundleVim/Vundle.vim.git ${CUR_DIR}/bundle/Vundle.vim
+## git clone https://github.com/VundleVim/Vundle.vim.git ${CUR_DIR}/bundle/Vundle.vim
+git clone https://github.com/junegunn/vim-plug.git ${CUR_DIR}/Plug/vim-plug
+mkdir -p ${CUR_DIR}/Plug/vim-plug/autoload
+cp ${CUR_DIR}/Plug/vim-plug/plug.vim ${CUR_DIR}/Plug/vim-plug/autoload
+
 ## 增加英汉字典
 sudo mkdir -p /usr/share/stardict/dic
 wget -O dict.tar.bz2 http://abloz.com/huzheng/stardict-dic/zh_CN/stardict-stardict1.3-2.4.2.tar.bz2
@@ -52,6 +56,7 @@ let g:my_vimrc_dir = "${CUR_DIR}"
 exe "source " .  g:my_vimrc_dir . "/vimrc/myvimrc"
 EOF
 ## 安装插件
-vim -c ":BundleInstall" -c ":exit" -c ":exit"
+## vim -c ":BundleInstall" -c ":exit" -c ":exit"
+vim -c ":PlugInstall" -c ":exit" -c ":exit"
 ## 安装完成
 echo "finish"
