@@ -20,7 +20,8 @@ let g:menu_list = [
             \        "F字体+主题",
             \        [
             \            {"name" : "&Fixedsys字体",      "os" : "win32", "view": "<TAB>\:set\\ guifont=Fixedsys\:h12",      "cmd" : ":set guifont=Fixedsys:h12<CR>" },
-            \            {"name" : "&Consolas字体",      "os" : "win32", "view": "<TAB>\:set\\ guifont=Consolas\:h18",      "cmd" : ":set guifont=Consolas:h18<CR>" },
+            \            {"name" : "&Consolas字体-16",   "os" : "win32", "view": "<TAB>\:set\\ guifont=Consolas\:h16",      "cmd" : ":set guifont=Consolas:h16<CR>" },
+            \            {"name" : "&Consolas字体-18",   "os" : "win32", "view": "<TAB>\:set\\ guifont=Consolas\:h18",      "cmd" : ":set guifont=Consolas:h18<CR>" },
             \            {"name" : "&Courier\\ New字体", "os" : "win32", "view": "<TAB>\:set\\ guifont=Courier\\ New\:h16", "cmd" : "set guifont=Courier\ New:h16<CR>" },
             \            {"name" : "&Monaco字体",        "os" : "win32", "view": "<TAB>\:set\\ guifont=Monaco\:h14",        "cmd" : ":set guifont=Monaco:h14<CR>" },
             \        
