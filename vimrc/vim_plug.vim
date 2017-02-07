@@ -9,6 +9,8 @@ filetype off
 
 exe "set rtp+=" . g:my_vimrc_dir . "/Plug/vim-plug"
 
+let g:plug_threads = 2
+
 call plug#begin(g:my_vimrc_dir . "/Plug")
 " 插件必须在#begin #end之间
 Plug 'https://github.com/junegunn/vim-plug.git'
