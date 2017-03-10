@@ -53,8 +53,7 @@ function! SearchWordByGrep()
         " --include 包含文件
         " -w 全字匹配
         " -i 忽略大小写
-        " exe  "Grep -nraHwi --include=*.[ehpc][rhtf][lpmg] " . wd . " ."
-        exe "Grepper"
+        exe  "Grep -nraHwi --include=*.[ehpc][rhtf][lpmg] " . wd . " ."
     else
         exe "vimgrep \"\\<" . wd . "\\>\" ."
     endif
