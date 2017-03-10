@@ -54,12 +54,12 @@ Plug 'https://github.com/danro/rename.vim.git'
 Plug 'https://github.com/kingwen0302/vim-autoformat.git'
 Plug 'https://github.com/luochen1990/rainbow.git'
 Plug 'https://github.com/skywind3000/asyncrun.vim.git'
-Plug 'https://github.com/vim-scripts/grep.vim.git'
-
 " Plug 'https://github.com/editorconfig/editorconfig-vim.git'
 
 Plug 'racer-rust/vim-racer'
 Plug 'rust-lang/rust.vim'
+
+Plug 'https://github.com/mhinz/vim-grepper.git'
 
 " Plug 'https://github.com/wakatime/vim-wakatime.git'
 " Plug 'https://github.com/scrooloose/syntastic.git'

@@ -3,14 +3,14 @@ function! SetProjectRoot()
     if !empty(rootpath)
         let rootpath = fnamemodify(rootpath, ':h')
         echo rootpath
-        execute 'lcd' fnameescape(rootpath)
+        execute 'cd' fnameescape(rootpath)
         return
     else
         for repo in ['.git', '.hg', '.svn']
             let repopath = finddir(repo, '.;')
             if !empty(repopath)
                 let repopath = fnamemodify(repopath, ':h')
-                execute 'lcd' fnameescape(repopath)
+                execute 'cd' fnameescape(repopath)
                 return
             endif
         endfor
@@ -45,19 +45,11 @@ function! SearchWordByGrep()
     " 中文字符串 - vimgrep
     " 英文字符串 - grep
     if len1 == len2
-        " 使用Grep
-        " -n 显示行号
-        " -r 递归
-        " -a 以文本文件查询
-        " -H 打印文件名
-        " --include 包含文件
-        " -w 全字匹配
-        " -i 忽略大小写
-        exe  "Grep -nraHwi --include=*.[ehpc][rhtf][lpmg] " . wd . " ."
+        :Grepper -cword
     else
-        exe "vimgrep \"\\<" . wd . "\\>\" ."
+        exe "vimgrep \"\\<" . wd . "\\>\" **/*.[ehpc][rhtf][lpmg]"
+        copen
     endif
-    copen
 endfunction
 map <F9> :call SearchWordByGrep()<CR>
 
@@ -72,18 +64,11 @@ function! SearchWordDialog()
         " 中文字符串 - vimgrep
         " 英文字符串 - grep
         if len1 == len2
-            " -n 显示行号
-            " -r 递归
-            " -a 以文本文件查询
-            " -H 打印文件名
-            " --include 包含文件
-            " -w 全字匹配
-            " -i 忽略大小写
-            try | exe  "Grep -nraHi --include=*.[ehpc][rhtf][lpmg] " . str . " ." |catch | | endtry
+            try | exe "Grepper " . str | catch | | endtry
         else
-            try | execute "vimgrep \"" . str . "\" ." | catch | | endtry
+            try | execute "vimgrep \"" . str . "\" **/*.[ehpc][rhtf][lpmg]" | catch | | endtry
+            copen
         endif
-        copen
     endif
 endfunction
 map <C-F9> :call SearchWordDialog()<CR>
