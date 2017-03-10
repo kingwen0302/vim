@@ -1,68 +1,42 @@
-function! GetDirs()
-    let dir = expand("%:p")
-    for value in g:proj_search
-        let ind = value[0]
-        let pa  = value[1]
-        let is_match = 1
-        let key = pa["search_key"]
-        if has("win32") 
-            let FXDir = pa["search_path"]
-        else
-            let FXDir = pa["linux_search_path"]
-        endif
-        for key_1 in split(key, "\\")
-            if matchstr(dir, key_1) != ""
-                let is_match = is_match && 1
-            else
-                let is_match = is_match && 0
+function! SetProjectRoot()
+    let rootpath = findfile('.projectile', '.;')
+    if !empty(rootpath)
+        let rootpath = fnamemodify(rootpath, ':h')
+        echo rootpath
+        execute 'lcd' fnameescape(rootpath)
+        return
+    else
+        for repo in ['.git', '.hg', '.svn']
+            let repopath = finddir(repo, '.;')
+            if !empty(repopath)
+                let repopath = fnamemodify(repopath, ':h')
+                execute 'lcd' fnameescape(repopath)
+                return
             endif
         endfor
-        if is_match == 1
-            return FXDir
-        endif
-    endfor
-    return {1:"."}
+    endif
 endfunction
 
 function! FindFile()
-    let FXDirs = GetDirs()
+    call SetProjectRoot()
     let search_word = expand("<cword>")
-    for [key, dir] in items(FXDirs)
+    try 
+        exe "find ./**/" . search_word . ".erl" 
+        return
+    catch
         try 
-            exe "find " . dir . "/**/" . search_word . ".erl" 
+            exe "find ./**/" . search_word . ".hrl" 
             return
         catch
-            try 
-                exe "find " . dir . "/**/" . search_word . ".hrl" 
-                return
-            catch
-                continue
-            endtry
+            :
         endtry
-    endfor
+    endtry
     echo search_word.".[eh]rl ]not found"
 endfunction
-
-function! DirsToPath()
-    let path = ""
-    for [key, dir] in items(g:FXDirs)
-        let path = path . " " . dir . "/**/*.[ehpc][rhtf][lpmg]"
-    endfor
-    return path
-endfunction
-
-function! DirsToPath_1()
-    let path = ""
-    for [key, dir] in items(g:FXDirs)
-        let path = path . " " . dir
-    endfor
-    return path
-endfunction
-
 map <F6> :call FindFile()<CR>
 
 function! SearchWordByGrep()
-    let g:FXDirs = GetDirs()
+    call SetProjectRoot()
     " 使用grep查询
     " 飞一般的速度
     let wd = expand("<cword>")
@@ -71,7 +45,7 @@ function! SearchWordByGrep()
     " 中文字符串 - vimgrep
     " 英文字符串 - grep
     if len1 == len2
-        let Path = DirsToPath_1()
+        " 使用Grep
         " -n 显示行号
         " -r 递归
         " -a 以文本文件查询
@@ -79,52 +53,50 @@ function! SearchWordByGrep()
         " --include 包含文件
         " -w 全字匹配
         " -i 忽略大小写
-        exe  "Grep -nraHwi --include=*.[ehpc][rhtf][lpmg] " . expand("<cword>") . " " . Path 
+        " exe  "Grep -nraHwi --include=*.[ehpc][rhtf][lpmg] " . wd . " ."
+        exe "Grepper"
     else
-        let Path = DirsToPath()
-        exe "vimgrep \"\\<" . expand("<cword>") . "\\>\" " . Path
+        exe "vimgrep \"\\<" . wd . "\\>\" ."
     endif
     copen
 endfunction
 map <F9> :call SearchWordByGrep()<CR>
 
 function! SearchWordDialog()
-  let str = inputdialog("查询", expand("%:t:r") . ":" . expand("<cword>"))
-  if str != ""
-    let g:FXDirs = GetDirs()
-    " silent! exe "vimgrep \"" . str . "\" E:/g1/**/*.[eh]rl"
-    " 忽略错误
-    let len1 = strlen(str)
-    let len2 = strlen(substitute(str, ".", "x", "g"))
-    " 中文字符串 - vimgrep
-    " 英文字符串 - grep
-    if len1 == len2
-        let Path = DirsToPath_1()
-        " -n 显示行号
-        " -r 递归
-        " -a 以文本文件查询
-        " -H 打印文件名
-        " --include 包含文件
-        " -w 全字匹配
-        " -i 忽略大小写
-        try | exe  "Grep -nraHi --include=*.[ehpc][rhtf][lpmg] " . str . " " . Path |catch | | endtry
-    else
-        let Path = DirsToPath()
-        try | execute "vimgrep \"" . str . "\" " . Path | catch | | endtry
+    let str = inputdialog("查询", expand("%:t:r") . ":" . expand("<cword>"))
+    if str != ""
+        call SetProjectRoot()
+        " silent! exe "vimgrep \"" . str . "\" E:/g1/**/*.[eh]rl"
+        " 忽略错误
+        let len1 = strlen(str)
+        let len2 = strlen(substitute(str, ".", "x", "g"))
+        " 中文字符串 - vimgrep
+        " 英文字符串 - grep
+        if len1 == len2
+            " -n 显示行号
+            " -r 递归
+            " -a 以文本文件查询
+            " -H 打印文件名
+            " --include 包含文件
+            " -w 全字匹配
+            " -i 忽略大小写
+            try | exe  "Grep -nraHi --include=*.[ehpc][rhtf][lpmg] " . str . " ." |catch | | endtry
+        else
+            try | execute "vimgrep \"" . str . "\" ." | catch | | endtry
+        endif
+        copen
     endif
-    copen
-  endif
 endfunction
 map <C-F9> :call SearchWordDialog()<CR>
 
 function! LeaderF_func()
-    let FXDir = GetDirs()
-    exe "Leaderf " . FXDir['1']
+    call SetProjectRoot()
+    exe "Leaderf"
 endfunction
 
 function! CtrlP_func()
-    let FXDir = GetDirs()
-    exe "CtrlP " . FXDir['1']
+    call SetProjectRoot()
+    exe "CtrlP"
 endfunction
 
 if g:has_python == 1
