@@ -16,6 +16,7 @@ if g:has_python == 1
 else
    exe "source " . g:my_vimrc_dir . "/vimrc/ctrlp.vim"
 endif
+exe "source " . g:my_vimrc_dir . "/vimrc/change_proj.vim"
 
 if has("gui_running")
    exe "source " . g:my_vimrc_dir . "/vimrc/gui_tab.vim"
