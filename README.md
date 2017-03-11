@@ -28,8 +28,11 @@ exe "source " .  g:my_vimrc_dir . "/vimrc/myvimrc"
 
 1. 配置
 
-  - 项目配置  
-    cfg.vim  
+  - 项目配置
+    cfg.vim
+    根目录确定方式:
+    1. 项目根目录存在`.projectile`文件
+    1. 项目根目录存在`.svn`,`.hg`,`.git`
 
   - 菜单配置  
     def_menu.vim  
