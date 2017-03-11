@@ -64,7 +64,7 @@ function! SearchWordDialog()
         " 中文字符串 - vimgrep
         " 英文字符串 - grep
         if len1 == len2
-            try | exe "Grepper " . str | catch | | endtry
+            try | exe "Grepper -query " . str | catch | | endtry
         else
             try | execute "vimgrep \"" . str . "\" **/*.[ehpc][rhtf][lpmg]" | catch | | endtry
             copen
