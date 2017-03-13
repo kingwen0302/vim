@@ -61,6 +61,9 @@ Plug 'rust-lang/rust.vim'
 
 Plug 'https://github.com/mhinz/vim-grepper.git'
 
+Plug 'https://github.com/altercation/vim-colors-solarized.git'
+Plug 'https://github.com/tpope/vim-surround.git'
+
 " Plug 'https://github.com/wakatime/vim-wakatime.git'
 " Plug 'https://github.com/scrooloose/syntastic.git'
 " Plug 'https://github.com/xolox/vim-misc.git'
