@@ -22,7 +22,13 @@ let g:grepper.dir = 'cwd'
 " --word-regexp 全字匹配
 " --all-text 文本文件
 " let g:grepper.ag.grepprg .= ' -G .*.[ehpc][rhtf][lpmg] --word-regexp --all-text --skip-vcs-ignores --vimgrep --smart-case'
-let g:grepper.ag.grepprg .= ' -G .*.erl|.*.hrl|.*.cfg|.*.php|.*.htm --word-regexp --all-text --skip-vcs-ignores --vimgrep --smart-case'
+let g:grepper.ag.grepprg .= ' --word-regexp --all-text --skip-vcs-ignores --vimgrep --smart-case'
+" 很怪异
+if has('win32')
+    let g:grepper.ag.grepprg .= ' -G .*.erl|.*.hrl|.*.cfg|.*.php|.*.htm'
+else
+    let g:grepper.ag.grepprg .= ' -G ' . fnameescape('.*.erl|.*.hrl|.*.cfg|.*.php|.*.htm')
+endif
 
 " 使用grep/git-grep
 " -n 显示行号

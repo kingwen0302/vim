@@ -53,7 +53,11 @@ endfunction
 map <F9> :call SearchWordByGrep()<CR>
 
 function! SearchWordDialog()
-    let str = inputdialog("查询", expand("%:t:r") . ":" . expand("<cword>"))
+    if has('gui_running')
+        let str = inputdialog("查询字符串", expand("%:t:r") . ":" . expand("<cword>"))
+    else
+        let str = input("查询字符串", expand("%:t:r") . ":" . expand("<cword>"))
+    endif
     if str != ""
         call SetProjectRoot()
         " silent! exe "vimgrep \"" . str . "\" E:/g1/**/*.[eh]rl"
@@ -87,3 +91,6 @@ if g:has_python == 1
 else
     map <F12> :call CtrlP_func()<CR>
 endif
+
+command! -nargs=0 SearchWordByGrep call SearchWordByGrep()
+command! -nargs=0 SearchWordDialog call SearchWordDialog()
