@@ -68,6 +68,8 @@ if has('lua')
     Plug 'https://github.com/Shougo/neocomplete.vim.git'
 endif
 
+Plug 'https://github.com/flazz/vim-colorschemes.git'
+
 " Plug 'https://github.com/wakatime/vim-wakatime.git'
 " Plug 'https://github.com/scrooloose/syntastic.git'
 " Plug 'https://github.com/xolox/vim-misc.git'

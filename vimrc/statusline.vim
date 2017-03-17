@@ -11,5 +11,6 @@ set statusline+=\ \|\ %{&fenc!=''?&fenc:&enc}[%{&ff}]\ ASCII:%b
 " set statusline+=\ \|\ %{$USER}@%{hostname()}
 " set statusline+=\ \|\ %{strftime(\"%Y年%m月%d日\ %H:%M\")}
 set statusline+=\ \|\ %{strftime(\"%c\")}
-set statusline+=\ \|\ 酷抠族
+set statusline+=\ \|\ 主题:%{g:colors_name}
+" set statusline+=\ \|\ 酷抠族
 " set statusline+=\ \|\ kingwen0302@msn.com

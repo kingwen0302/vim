@@ -2,11 +2,10 @@ function! SetProjectRoot()
     let rootpath = findfile('.projectile', '.;')
     if !empty(rootpath)
         let rootpath = fnamemodify(rootpath, ':h')
-        echo rootpath
         execute 'cd' fnameescape(rootpath)
         return
     else
-        for repo in ['.git', '.hg', '.svn']
+        for repo in ['.svn', '.hg', '.git']
             let repopath = finddir(repo, '.;')
             if !empty(repopath)
                 let repopath = fnamemodify(repopath, ':h')
