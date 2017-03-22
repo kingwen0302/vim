@@ -54,7 +54,7 @@ Plug 'https://github.com/danro/rename.vim.git'
 Plug 'https://github.com/kingwen0302/vim-autoformat.git'
 Plug 'https://github.com/luochen1990/rainbow.git'
 Plug 'https://github.com/skywind3000/asyncrun.vim.git'
-" Plug 'https://github.com/editorconfig/editorconfig-vim.git'
+Plug 'https://github.com/editorconfig/editorconfig-vim.git'
 
 Plug 'racer-rust/vim-racer'
 Plug 'rust-lang/rust.vim'
@@ -70,6 +70,7 @@ endif
 
 Plug 'https://github.com/flazz/vim-colorschemes.git'
 
+" Plug 'https://github.com/yegappan/mru.git'
 " Plug 'https://github.com/wakatime/vim-wakatime.git'
 " Plug 'https://github.com/scrooloose/syntastic.git'
 " Plug 'https://github.com/xolox/vim-misc.git'

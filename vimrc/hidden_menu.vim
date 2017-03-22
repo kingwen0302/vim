@@ -10,7 +10,7 @@ function! Menu_bar()
         set guioptions-=T
         set guioptions-=m
     else
-        set guioptions+=T
+        set guioptions-=T
         set guioptions+=m
     endif
 endfunction

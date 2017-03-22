@@ -92,5 +92,15 @@ else
     map <F12> :call CtrlP_func()<CR>
 endif
 
+function! MruCwd()
+    call SetProjectRoot()
+    if g:has_python == 1
+        :LeaderfMruCwd
+    else
+        :CtrlPMRUFiles
+    endif
+endfunction
+
 command! -nargs=0 SearchWordByGrep call SearchWordByGrep()
 command! -nargs=0 SearchWordDialog call SearchWordDialog()
+command! -nargs=0 MruCwd call MruCwd()

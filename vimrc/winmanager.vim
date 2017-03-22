@@ -2,7 +2,7 @@
 let g:winManagerWindowLayout = 'FileExplorer|BufExplorer'
 let g:winManagerWidth = 30
 
-nmap <F7> :WMToggle <CR> :TlistToggle <CR>
+nmap <F7> :set guifont=Fixedsys:h12<CR> :WMToggle <CR> :TlistToggle <CR>
 
 " Tag设置
 let Tlist_Show_One_File = 1
