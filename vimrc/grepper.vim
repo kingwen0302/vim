@@ -1,10 +1,30 @@
-runtime autoload/grepper.vim
+try 
+    runtime autoload/grepper.vim
+catch 
+    let g:grepper = {}
+endtry
 
 let g:grepper.highlight = 1
 let g:grepper.quickfix = 1
 let g:grepper.prompt = 0
 let g:grepper.switch = 1
 let g:grepper.dir = 'cwd'
+
+
+let g:grepper.file_list = ["erl", "hrl", "php", "cfg", "htm", "vim"]
+
+let g:grepper.ag.file_list = []
+let g:grepper.grep.file_list = []
+let g:grepper.findstr.file_list = []
+for i in g:grepper.file_list
+    call add(g:grepper.ag.file_list, ".*." . i)
+    call add(g:grepper.grep.file_list, "--include=*." . i)
+    call add(g:grepper.findstr.file_list, "*." . i)
+endfor
+
+let g:grepper.ag.file_list = join(g:grepper.ag.file_list, "|")
+let g:grepper.grep.file_list = join(g:grepper.grep.file_list, " ")
+let g:grepper.findstr.file_list = join(g:grepper.findstr.file_list, " ")
 
 " let g:grepper.tools = ['ag', 'ack', 'grep', 'findstr', 'rg', 'pt', 'sift', 'git']
 
@@ -25,9 +45,11 @@ let g:grepper.dir = 'cwd'
 let g:grepper.ag.grepprg .= ' --word-regexp --all-text --skip-vcs-ignores --vimgrep --smart-case'
 " 很怪异
 if has('win32')
-    let g:grepper.ag.grepprg .= ' -G .*.erl|.*.hrl|.*.cfg|.*.php|.*.htm'
+    " let g:grepper.ag.grepprg .= ' -G .*.erl|.*.hrl|.*.cfg|.*.php|.*.htm|.*.vim'
+    let g:grepper.ag.grepprg .= ' -G ' . g:grepper.ag.file_list
 else
-    let g:grepper.ag.grepprg .= ' -G ' . fnameescape('.*.erl|.*.hrl|.*.cfg|.*.php|.*.htm')
+    " let g:grepper.ag.grepprg .= ' -G ' . fnameescape('.*.erl|.*.hrl|.*.cfg|.*.php|.*.htm|.*.vim')
+    let g:grepper.ag.grepprg .= ' -G ' . fnameescape(g:grepper.ag.file_list)
 endif
 
 " 使用grep/git-grep
@@ -39,7 +61,8 @@ endif
 " -w 全字匹配
 " -i 忽略大小写
 " let g:grepper.grep.grepprg .= " -nraHwi --include=*.[ehpc][rhtf][lpmg]"
-let g:grepper.grep.grepprg .= " -nraHwi --include=*.erl --include=*.hrl --include=*.cfg --include=*.php --include=*.htm"
+" let g:grepper.grep.grepprg .= " -nraHwi --include=*.erl --include=*.hrl --include=*.cfg --include=*.php --include=*.htm --include=*.vim"
+let g:grepper.grep.grepprg .= " -nraHwi " . g:grepper.grep.file_list
 
 " 使用findstr
-let g:grepper.findstr.grepprg .= " *.erl *.hrl *.php *.cfg *.htm"
+let g:grepper.findstr.grepprg .= " " . g:grepper.findstr.file_list
