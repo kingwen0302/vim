@@ -104,3 +104,5 @@ endfunction
 command! -nargs=0 SearchWordByGrep call SearchWordByGrep()
 command! -nargs=0 SearchWordDialog call SearchWordDialog()
 command! -nargs=0 MruCwd call MruCwd()
+
+nmap <S-Enter> :call MruCwd()<CR>
