@@ -3,7 +3,7 @@
 ### 安装
 
 1. 依赖
-安装并加入`path`环境变量中
+  安装并加入`path`环境变量中
   - [vim](https://github.com/vim/vim-win32-installer/releases)
   - `Python 2.7`  
   - `Git`  
@@ -14,15 +14,15 @@
 1. 执行`install.sh`
 
 1. 在`.vimrc`中添加(For Windows Users)：
-```shell
+  ```shell
 ## ~/.vim为git根目录
 let g:my_vimrc_dir = "~/.vim"
 exe "source " .  g:my_vimrc_dir . "/vimrc/myvimrc"
 ```
 
 1. 使用vim-plug安装插件
-`打开vim`->`PlugInstall`->`完成`  
-`进入g:my_vimrc_dir/Plug/YouCompleteMe/`->`./install.sh` 
+  `打开vim`->`PlugInstall`->`完成`  
+  `进入g:my_vimrc_dir/Plug/YouCompleteMe/`->`./install.sh` 
 
 1. 配置
 
