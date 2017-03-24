@@ -69,8 +69,8 @@ NORMAL模式下：`Ctrl+v` -> hjkl选择 -> `yy`|`dd` -> 找到其他位置 -> `
 |Ctrl+F9|弹框输入字符串在项目内搜索|:call SearchWordDialog()|
 |F10|聚焦菜单栏|
 |F11|项目快速切换|:call ChangeProj()|
-|F12|项目内文件搜索|:call LeaderF_func() :call CtrlP_func()|
-|Ctrl-Enter|最近打开文件|:LeaderfMru :CtrlPMRUFiles|
+|F12|项目内文件搜索|:call LeaderF_func() <br/>:call CtrlP_func()|
+|Ctrl-Enter|最近打开文件|:LeaderfMru <br/>:CtrlPMRUFiles|
 |Shift-Enter|最近打开的项目文件|:call MruCwd()|
 |Ctrl-w o|最大化当前窗口|
 |:vs|垂直分割|
