@@ -9,9 +9,9 @@
 1. 执行`install.sh`
 
 1. 在`.vimrc`中添加(For Windows Users)：  
-    > \#\# ~/.vim为git根目录
-    > let g:my_vimrc_dir = "~/.vim"
-    > exe "source " .  g:my_vimrc_dir . "/vimrc/myvimrc"
+    > \#\# ~/.vim为git根目录  
+    > let g:my_vimrc_dir = "~/.vim"  
+    > exe "source " .  g:my_vimrc_dir . "/vimrc/myvimrc"  
 
 1. 使用vim-plug安装插件  
     > `打开vim`->`PlugInstall`->`完成`  
