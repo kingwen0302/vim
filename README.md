@@ -3,8 +3,9 @@
 ### 安装
 
 1. 依赖
-安装[vim](https://github.com/vim/vim-win32-installer/releases),`Python 2.7`,[Git](https://github.com/git-for-windows/git/releases/download/v2.12.1.windows.1/Git-2.12.1-64-bit.exe),`ctags`,`grep`,`TortoiseSVN`
-并加入`path`环境变量中
+安装**相同架构**的[vim](https://github.com/vim/vim-win32-installer/releases)、[Python 2.7](www.python.org)、[Git](https://git-for-windows.github.io)、[ctags](https://sourceforge.net/projects/ctags/)、[TortoiseSVN](http://subversion.tigris.org)、[LUA](http://lua-users.org/wiki/LuaBinaries)  
+可选安装`the_silver_searcher(ag)`、`grep`  
+并加入`path`环境变量中  
 
 1. 执行`install.sh`
 
@@ -14,7 +15,6 @@
 
 1. 使用vim-plug安装插件  
     > `打开vim`->`PlugInstall`->`完成`  
-    > `进入g:my_vimrc_dir/Plug/YouCompleteMe/`->`./install.sh` 
 
 ### 配置
 
@@ -37,16 +37,16 @@
 
 ### vim使用小技巧
 
-1. 粘贴代码
+1. 粘贴代码  
 NORMAL模式下：`set paste` -> 粘贴代码后 -> `set nopaste`
 
-1. 行选
+1. 行选  
 NORMAL模式下: `V` -> 上下选择 -> `yy`|`dd` -> 找到其他位置 -> `p`
 
-1. 列选
-NORMAL模式下：`Ctrl+v` -> hjkl选择 -> `yy`|`dd` -> 找到其他位置 -> `p`
+1. 列选  
+NORMAL模式下：`Ctrl+v`或者 `Ctrl-q`(windows) -> hjkl选择 -> `yy`|`dd` -> 找到其他位置 -> `p`
 
-1. 常用快捷键
+1. 常用快捷键  
 
 |快捷键|注释|命令|
 |----|----|---|
