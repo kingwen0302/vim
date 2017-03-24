@@ -8,8 +8,7 @@
 
 1. 执行`install.sh`
 
-1. 在`.vimrc`中添加(For Windows Users)：  
-    > \#\# ~/.vim为git根目录  
+1. 在`配置文件`(windows: gvim安装目录下的_vimrc; linux: ~/.vimrc)中添加：  
     > let g:my_vimrc_dir = "~/.vim"  
     > exe "source " .  g:my_vimrc_dir . "/vimrc/myvimrc"  
 
