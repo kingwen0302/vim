@@ -5,7 +5,7 @@
 set guioptions+=m   " 隐藏菜单栏
 set guioptions-=T   " 隐藏工具栏
 
-function! Menu_bar()
+function! MenuToggle()
     if &guioptions =~# 'm'
         set guioptions-=T
         set guioptions-=m
@@ -15,4 +15,4 @@ function! Menu_bar()
     endif
 endfunction
 
-map <silent> <F2> :call Menu_bar() <CR>
+command! -nargs=0 MenuToggle call MenuToggle()

@@ -81,19 +81,6 @@ set tags=tags;
 " highlight StatusLine cterm = bold ctermfg = yellow ctermbg = blue
 
 " set cmdheight=2
-" 括号自动补全
-inoremap ( ()<LEFT>
-inoremap [ []<LEFT>
-inoremap { {}<LEFT>
-inoremap ' ''<LEFT>
-inoremap " ""<LEFT>
-inoremap < <><LEFT>
-
-nmap <F5> :tab split <CR>
-nmap <F4> :bdelete <CR>
-nmap <C-F4> :close <CR>
-nmap <F8> :buffers <CR>
-map <F3> :emenu <C-Z>
 
 " 增加菜单
 source $VIMRUNTIME/menu.vim

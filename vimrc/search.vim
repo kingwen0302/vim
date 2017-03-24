@@ -16,7 +16,7 @@ function! SetProjectRoot()
     endif
 endfunction
 
-function! FindFile()
+function! JumpToFile()
     call SetProjectRoot()
     let search_word = expand("<cword>")
     try 
@@ -32,7 +32,6 @@ function! FindFile()
     endtry
     echo search_word.".[eh]rl ]not found"
 endfunction
-map <F6> :call FindFile()<CR>
 
 function! SearchWordByGrep()
     call SetProjectRoot()
@@ -50,7 +49,6 @@ function! SearchWordByGrep()
         copen
     endif
 endfunction
-map <F9> :call SearchWordByGrep()<CR>
 
 function! SearchWordDialog()
     if has('gui_running')
@@ -74,23 +72,6 @@ function! SearchWordDialog()
         endif
     endif
 endfunction
-map <C-F9> :call SearchWordDialog()<CR>
-
-function! LeaderF_func()
-    call SetProjectRoot()
-    exe "Leaderf"
-endfunction
-
-function! CtrlP_func()
-    call SetProjectRoot()
-    exe "CtrlP"
-endfunction
-
-if g:has_python == 1
-    map <F12> :call LeaderF_func()<CR>
-else
-    map <F12> :call CtrlP_func()<CR>
-endif
 
 function! MruCwd()
     call SetProjectRoot()
@@ -101,8 +82,27 @@ function! MruCwd()
     endif
 endfunction
 
+function! LeaderfOrCtrlp()
+    if g:has_python == 1
+        call SetProjectRoot()
+    exe "Leaderf"
+    else
+        call SetProjectRoot()
+    exe "CtrlP"
+    endif
+endfunction
+
+function! MruAll()
+    if g:has_python == 1
+        :LeaderfMru
+    else
+        :CtrlPMRUFiles
+    endif
+endfunction
+
 command! -nargs=0 SearchWordByGrep call SearchWordByGrep()
 command! -nargs=0 SearchWordDialog call SearchWordDialog()
 command! -nargs=0 MruCwd call MruCwd()
-
-nmap <S-Enter> :call MruCwd()<CR>
+command! -nargs=0 MruAll call MruAll()
+command! -nargs=0 LeaderfOrCtrlp call LeaderfOrCtrlp()
+command! -nargs=0 JumpToFile call JumpToFile()

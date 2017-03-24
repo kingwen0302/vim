@@ -8,5 +8,3 @@ let g:Lf_WildIgnore = {
             \}
 let g:Lf_MruFileExclude = ['*.so','*.exe','*.beam','*.log']
 let g:Lf_WindowPosition = 2
-
-nmap <C-Enter> :LeaderfMru<cr>

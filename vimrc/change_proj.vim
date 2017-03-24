@@ -5,7 +5,7 @@ endif
 let g:LocalProjectDir = g:proj_search[g:LocalProjectID]['path']
 
 " 切换项目目录
-function! ChangeProj()
+function! ChangeProject()
     let note = "项目列表:\n"
     let g:proj_index = 0
     for value in g:proj_search
@@ -29,4 +29,5 @@ function! ChangeProj()
     exe "cd " . g:LocalProjectDir
     echo "\n切换后的目录:" . g:LocalProjectDir . "\n"
 endfunction
-map <silent> <F11> :call ChangeProj() <CR>
+
+command! -nargs=0 ChangeProject call ChangeProject()
