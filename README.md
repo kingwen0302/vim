@@ -2,12 +2,12 @@
 
 ### 安装
 
-1. 依赖
+1. 依赖  
 安装**相同架构**的[vim](https://github.com/vim/vim-win32-installer/releases)、[Python 2.7](www.python.org)、[Git](https://git-for-windows.github.io)、[ctags](https://sourceforge.net/projects/ctags/)、[TortoiseSVN](http://subversion.tigris.org)、[LUA](http://lua-users.org/wiki/LuaBinaries)  
 可选安装`the_silver_searcher(ag)`、`grep`  
 并加入`path`环境变量中  
 
-1. 执行`install.sh`
+1. 执行`install.sh`  
 
 1. 在`配置文件`(windows: gvim安装目录下的_vimrc; linux: ~/.vimrc)中添加：  
     > let g:my_vimrc_dir = "~/.vim"  
