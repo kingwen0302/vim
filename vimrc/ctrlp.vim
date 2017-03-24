@@ -14,4 +14,4 @@ let g:ctrlp_custom_ignore = {
 let g:Lf_MruFileExclude = ['*.so','*.exe','*.beam','*.log']
 let g:Lf_WindowPosition = 2
 
-nmap <C-Enter> :CtrlPMRUFiles<CR>
+
