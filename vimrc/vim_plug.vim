@@ -69,6 +69,7 @@ if has('lua')
 endif
 
 Plug 'https://github.com/flazz/vim-colorschemes.git'
+Plug 'https://github.com/kingwen0302/vim-erlang-tags.git'
 
 " Plug 'https://github.com/yegappan/mru.git'
 " Plug 'https://github.com/wakatime/vim-wakatime.git'

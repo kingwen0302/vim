@@ -1,19 +1,24 @@
-function! SetProjectRoot()
+function! UpProjectRoot()
     let rootpath = findfile('.projectile', '.;')
     if !empty(rootpath)
         let rootpath = fnamemodify(rootpath, ':h')
-        execute 'cd' fnameescape(rootpath)
+        let g:project_root = fnameescape(rootpath)
         return
     else
         for repo in ['.svn', '.hg', '.git']
             let repopath = finddir(repo, '.;')
             if !empty(repopath)
                 let repopath = fnamemodify(repopath, ':h')
-                execute 'cd' fnameescape(repopath)
+                let g:project_root = fnameescape(repopath)
                 return
             endif
         endfor
     endif
+    let g:project_root = "./"
+endfunction
+function! SetProjectRoot()
+    call UpProjectRoot()
+    execute 'cd' g:project_root
 endfunction
 
 function! JumpToFile()
