@@ -5,5 +5,7 @@ function! MyErlangTags()
 endfunction
 
 command! -nargs=0 MyErlangTags call MyErlangTags()
-autocmd BufWritePost *.erl  call MyErlangTags()
-autocmd BufWritePost *.hrl  call MyErlangTags()
+if has('job') 
+    autocmd BufWritePost *.erl  call MyErlangTags() 
+    autocmd BufWritePost *.hrl  call MyErlangTags()
+endif
