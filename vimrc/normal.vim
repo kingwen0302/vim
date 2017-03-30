@@ -66,6 +66,8 @@ set si
 set wrap
 set display=lastline
 set hlsearch
+" set list
+" set listchars=tab:\|\ ,trail:*,extends:>,precedes:<
 
 set noeb         " 去掉输入错误的提示声音
 set ruler        " 打开状态栏标尺
