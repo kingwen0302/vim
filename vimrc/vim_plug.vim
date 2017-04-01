@@ -35,7 +35,7 @@ if !has('win32')
     Plug 'https://github.com/Lokaltog/vim-powerline.git'
 endif
 Plug 'https://github.com/vim-scripts/winmanager.git'
-Plug 'https://github.com/jlanzarotta/bufexplorer.git'
+Plug 'https://github.com/jlanzarotta/bufexplorer.git', {'branch': 'v7.4.6'}
 Plug 'https://github.com/kingwen0302/erlang_skel.git'
 Plug 'https://github.com/godlygeek/tabular.git'
 Plug 'https://github.com/mbbill/undotree.git'
