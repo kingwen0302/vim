@@ -10,7 +10,7 @@ let g:proj_company = [
             \ { "name": "[公司]VIM配置",   "path": "D:/myvim"},
             \ { "name": "[公司]web",       "path": "E:/web"},
             \ { "name": "[公司]BLOG",      "path": "E:/blog/blog_test/blog_source"},
-            \ { "name": "[公司]RUST",      "path": "D:/language_learn/rust_learn/project"},
+            \ { "name": "[公司]RUST",      "path": "E:/rust"},
             \ { "name": "[公司]ThinkPHP",  "path": "E:/web/thinkphp/Application"},
             \]
 

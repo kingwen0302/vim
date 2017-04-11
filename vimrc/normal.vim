@@ -91,5 +91,7 @@ set wildmode=list:full
 set cpo-=<
 set wcm=<C-Z>
 
+let mapleader = ","
+
 " 增加鼠标支持
 " set mouse=a

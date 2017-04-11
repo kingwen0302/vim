@@ -15,7 +15,8 @@ map <F4> :bdelete <CR>
 map <C-F4> :close <CR>
 map <F5> :tab split <CR>
 map <F6> :JumpToFile<CR>
-map <F7> :set guifont=Fixedsys:h12<CR> :WMToggle <CR> :TlistToggle <CR>
+" map <F7> :set guifont=Fixedsys:h12<CR> :WMToggle <CR> :TlistToggle <CR>
+map <F7> :set guifont=Fixedsys:h12<CR>:if IsWinManagerVisible() <BAR> WMToggle<CR> <BAR> else <BAR> WMToggle <CR>:q<CR> endif<CR><CR>:TagbarToggle<CR>
 map <F8> :buffers <CR>
 map <F9> :SearchWordByGrep<CR>
 map <C-F9> :SearchWordDialog<CR>

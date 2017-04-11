@@ -92,8 +92,8 @@ function! LeaderfOrCtrlp()
         call SetProjectRoot()
     exe "Leaderf"
     else
-        call SetProjectRoot()
-    exe "CtrlP"
+        call UpProjectRoot()
+    exe "CtrlP" g:project_root
     endif
 endfunction
 
