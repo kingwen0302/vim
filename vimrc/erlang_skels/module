@@ -1,0 +1,39 @@
+%% coding: latin-1 
+%%%-----------------------------------------------
+%%% @author $AUTHOR <$MAIL>
+%%% @copyright $YEAR ChuangYu, Inc.
+%%% @since $DATE $TIME
+%%% @doc
+%%%     
+%%% @end
+%%%-----------------------------------------------
+-module($MODULENAME).
+
+-include("logger.hrl").
+
+%% API
+-export([
+         init_module/0,
+         load_module/0,
+         reset_module/0,
+         unload_module/0,
+         save_module/0,
+         enter_world/0
+        ]).
+
+%% ====================================================================
+%% API functions
+%% ====================================================================
+
+%% ====================================================================
+%% Local functions
+%% ====================================================================
+check([]) -> true;
+check([Chk|L]) ->
+    case do_check(Chk) of
+        {false, ErrCode} -> {false, ErrCode};
+        true -> check(L)
+    end.
+
+%% TODO 真正的检测逻辑
+do_check(_) -> {false, -1}.

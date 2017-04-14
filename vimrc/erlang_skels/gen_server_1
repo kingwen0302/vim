@@ -1,0 +1,188 @@
+%% coding: latin-1 
+%%%-----------------------------------------------
+%%% @author $AUTHOR <$MAIL>
+%%% @copyright $YEAR ChuangYu, Inc.
+%%% @since $DATE $TIME
+%%% @doc
+%%%     
+%%% @end
+%%%-----------------------------------------------
+-module($MODULENAME).
+
+-behaviour(gen_server).
+
+-include("logger.hrl").
+
+%% API
+-export([start_link/0]).
+
+%% gen_server callbacks
+-export([init/1,
+         handle_call/3,
+         handle_cast/2,
+         handle_info/2,
+         terminate/2,
+         code_change/3]).
+
+%%%===================================================================
+%%% API
+%%%===================================================================
+
+%%--------------------------------------------------------------------
+%% @doc
+%% Starts the server
+%%
+%% @spec start_link() -> {ok, Pid} | ignore | {error, Error}
+%% @end
+%%--------------------------------------------------------------------
+start_link() ->
+    gen_server:start_link({local, ?MODULE}, ?MODULE, [], []).
+
+%%%===================================================================
+%%% gen_server callbacks
+%%%===================================================================
+
+%%--------------------------------------------------------------------
+%% @private
+%% @doc
+%% Initializes the server
+%%
+%% @spec init(Args) -> {ok, State} |
+%%                     {ok, State, Timeout} |
+%%                     ignore |
+%%                     {stop, Reason}
+%% @end
+%%--------------------------------------------------------------------
+init(Args) ->
+    try
+        do_init(Args)
+    catch
+        _:Reason ->
+            ?ERROR_MSG("~p init is exception:~w", [?MODULE, Reason]),
+            ?ERROR_MSG("get_stacktrace:~n~p", [erlang:get_stacktrace()]),
+            {stop, Reason}
+    end.
+
+%%--------------------------------------------------------------------
+%% @private
+%% @doc
+%% Handling call messages
+%%
+%% @spec handle_call(Request, From, State) ->
+%%                                   {reply, Reply, State} |
+%%                                   {reply, Reply, State, Timeout} |
+%%                                   {noreply, State} |
+%%                                   {noreply, State, Timeout} |
+%%                                   {stop, Reason, Reply, State} |
+%%                                   {stop, Reason, State}
+%% @end
+%%--------------------------------------------------------------------
+handle_call(Request, From, State) ->
+    try
+        do_call(Request, From, State)
+    catch
+        _:Reason ->
+            ?ERROR_MSG("~p handle_call is exception:~w~nRequest:~w", [?MODULE, Reason, Request]),
+            ?ERROR_MSG("get_stacktrace:~n~p", [erlang:get_stacktrace()]),
+            {reply,	ok,	State}
+    end.
+
+%%--------------------------------------------------------------------
+%% @private
+%% @doc
+%% Handling cast messages
+%%
+%% @spec handle_cast(Msg, State) -> {noreply, State} |
+%%                                  {noreply, State, Timeout} |
+%%                                  {stop, Reason, State}
+%% @end
+%%--------------------------------------------------------------------
+handle_cast(Msg, State) ->
+    try
+        do_cast(Msg, State)
+    catch
+        _:Reason ->
+            ?ERROR_MSG("~p handle_cast is exception:~w~nMsg:~w", [?MODULE, Reason, Msg]),
+            ?ERROR_MSG("get_stacktrace:~n~p", [erlang:get_stacktrace()]),
+            {noreply, State}
+    end.
+
+%%--------------------------------------------------------------------
+%% @private
+%% @doc
+%% Handling all non call/cast messages
+%%
+%% @spec handle_info(Info, State) -> {noreply, State} |
+%%                                   {noreply, State, Timeout} |
+%%                                   {stop, Reason, State}
+%% @end
+%%--------------------------------------------------------------------
+handle_info(Info, State) ->
+    try
+        do_info(Info, State)
+    catch
+        _:Reason ->
+            ?ERROR_MSG("~p handle_info is exception:~w~nInfo:~w", [?MODULE, Reason, Info]),
+            ?ERROR_MSG("get_stacktrace:~n~p", [erlang:get_stacktrace()]),
+            {noreply, State}
+    end.
+
+%%--------------------------------------------------------------------
+%% @private
+%% @doc
+%% This function is called by a gen_server when it is about to
+%% terminate. It should be the opposite of Module:init/1 and do any
+%% necessary cleaning up. When it returns, the gen_server terminates
+%% with Reason. The return value is ignored.
+%%
+%% @spec terminate(Reason, State) -> void()
+%% @end
+%%--------------------------------------------------------------------
+terminate(Reason, State) ->
+    try
+        do_terminate(Reason, State)
+    catch
+        _:Reason ->
+            ?ERROR_MSG("~p terminate is exception:~w", [?MODULE, Reason]),
+            ?ERROR_MSG("get_stacktrace:~n~p", [erlang:get_stacktrace()]),
+            ok
+    end.
+
+%%--------------------------------------------------------------------
+%% @private
+%% @doc
+%% Convert process state when code is changed
+%%
+%% @spec code_change(OldVsn, State, Extra) -> {ok, NewState}
+%% @end
+%%--------------------------------------------------------------------
+code_change(_OldVsn, State, _Extra) ->
+    {ok, State}.
+
+%%%===================================================================
+%%% Internal functions
+%%%===================================================================
+do_init(Args) ->
+    process_flag(trap_exit, true),
+    ?WARNING_MSG("~p init...", [?MODULE]),
+    misc:write_monitor_pid(self(), ?MODULE, Args),
+
+    State = {},
+    {ok, State}.
+
+do_call(Request, _, State)	->
+    ?WARNING_MSG("~p call is not match:~w", [?MODULE, Request]),
+    {reply,	ok,	State}.
+
+do_cast(Msg, State) ->
+    ?WARNING_MSG("~p cast is not match:~w", [?MODULE, Msg]),
+    {noreply, State}.
+
+do_info(Info, State) ->
+    ?WARNING_MSG("~p info is not match:~w", [?MODULE, Info]),
+    {noreply, State}.
+
+do_terminate(Reason, _State) ->
+    ?WARNING_MSG("~p terminate...~nReason:~p", [?MODULE, Reason]),
+    misc:delete_monitor_pid(self()),
+    ok.

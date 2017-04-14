@@ -74,6 +74,7 @@ Plug 'https://github.com/vim-erlang/vim-erlang-omnicomplete.git'
 Plug 'https://github.com/majutsushi/tagbar.git'
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/scrooloose/nerdcommenter.git'
+Plug 'https://github.com/vim-erlang/erlang-motions.vim.git'
 
 " Plug 'https://github.com/yegappan/mru.git'
 " Plug 'https://github.com/wakatime/vim-wakatime.git'

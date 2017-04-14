@@ -1,0 +1,9 @@
+%%%-----------------------------------------------
+%%% @author $AUTHOR <$MAIL>
+%%% @copyright $YEAR ChuangYu, Inc.
+%%% @since $DATE $TIME
+%%% @doc
+%%%     
+%%% @end
+%%%-----------------------------------------------
+-module($MODULENAME).
