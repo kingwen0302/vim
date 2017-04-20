@@ -10,6 +10,8 @@ let g:grepper.prompt = 0
 let g:grepper.switch = 1
 let g:grepper.dir = 'cwd'
 
+" 同步操作
+let w:testing = 1 
 
 let g:grepper.file_list = ["erl", "hrl", "php", "cfg", "htm", "vim"]
 
@@ -43,14 +45,7 @@ let g:grepper.findstr.file_list = join(g:grepper.findstr.file_list, " ")
 " --all-text 文本文件
 " let g:grepper.ag.grepprg .= ' -G .*.[ehpc][rhtf][lpmg] --word-regexp --all-text --skip-vcs-ignores --vimgrep --smart-case'
 let g:grepper.ag.grepprg .= ' --word-regexp --all-text --skip-vcs-ignores --vimgrep --smart-case'
-" 很怪异
-if has('win32')
-    " let g:grepper.ag.grepprg .= ' -G .*.erl|.*.hrl|.*.cfg|.*.php|.*.htm|.*.vim'
-    let g:grepper.ag.grepprg .= ' -G ' . g:grepper.ag.file_list
-else
-    " let g:grepper.ag.grepprg .= ' -G ' . fnameescape('.*.erl|.*.hrl|.*.cfg|.*.php|.*.htm|.*.vim')
-    let g:grepper.ag.grepprg .= ' -G ' . fnameescape(g:grepper.ag.file_list)
-endif
+let g:grepper.ag.grepprg .= ' -G "' . g:grepper.ag.file_list . '"'
 
 " 使用grep/git-grep
 " -n 显示行号

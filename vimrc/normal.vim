@@ -91,6 +91,8 @@ set wildmode=list:full
 set cpo-=<
 set wcm=<C-Z>
 
+set fileformats=unix,dos
+
 let mapleader = ","
 
 " 增加鼠标支持
