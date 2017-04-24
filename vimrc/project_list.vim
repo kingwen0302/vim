@@ -1,15 +1,15 @@
 let s:ProjectWinName = "ProjectList"
 
 let s:ProjectHelpDoc = [
-            \ { "name": "+======+=====================+"},
-            \ { "name": "| 回车 | leaderf             |"},
-            \ { "name": "| 双击 | leaderf             |"},
-            \ { "name": "| f    | leaderf             |"},
-            \ { "name": "| u    | svn update          |"},
-            \ { "name": "| c    | svn commit          |"},
-            \ { "name": "+======+=====================+"},
-            \ { "name": "项目列表:                     "},
-            \ { "name": "------------------------------"},
+            \ { "name": "+======+================+"},
+            \ { "name": "| 回车 | leaderf        |"},
+            \ { "name": "| 双击 | leaderf        |"},
+            \ { "name": "| f    | leaderf        |"},
+            \ { "name": "| u    | svn update     |"},
+            \ { "name": "| c    | svn commit     |"},
+            \ { "name": "+======+================+"},
+            \ { "name": "项目列表:                "},
+            \ { "name": "-------------------------"},
             \]
 
 function! s:ProjectView()
@@ -19,7 +19,7 @@ function! s:ProjectView()
         exec "wincmd c"
         return
     endif
-    let cmd = "topleft vertical 30 new " . s:ProjectWinName
+    let cmd = "topleft vertical 25 new " . s:ProjectWinName
     silent! execute cmd
     setlocal winfixwidth
     setlocal noswapfile
