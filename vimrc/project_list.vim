@@ -8,7 +8,7 @@ let s:ProjectHelpDoc = [
             \ { "name": "| u    | svn update          |"},
             \ { "name": "| c    | svn commit          |"},
             \ { "name": "+======+=====================+"},
-            \ { "name": "项目列表:"},
+            \ { "name": "项目列表:                     "},
             \ { "name": "------------------------------"},
             \]
 
@@ -40,8 +40,10 @@ function! s:ProjectView()
         let help_doc_count += 1
     endfor
     for i in g:proj_search
-        call append(project_count, i['name'])
-        let project_count += 1
+        if isdirectory(i['path'])
+            call append(project_count, i['name'])
+            let project_count += 1
+        endif
     endfor
     
     setlocal readonly
