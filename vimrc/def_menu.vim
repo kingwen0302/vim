@@ -60,6 +60,8 @@ let g:menu_list = [
             \            {"name" : "转为dos编码格式" ,           "os" : "all", "view": "",                        "cmd" : ":set fileformat=dos<CR>" },
             \            {"name" : "-SEP2-" ,                    "os" : "all", "view": "",                        "cmd" : "<Nop>" },
             \            {"name" : "去掉^M" ,                    "os" : "all", "view": "",                        "cmd" : ":%s/\r\+$//e<CR>" },
+            \            {"name" : "-SEP3-" ,                    "os" : "all", "view": "",                        "cmd" : "<Nop>" },
+            \            {"name" : "项目列表",                   "os" : "all", "view": "",                        "cmd" : ":ProjectView<CR>" },
             \        ]
             \    ],
             \]
