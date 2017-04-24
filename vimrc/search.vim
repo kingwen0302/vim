@@ -43,6 +43,7 @@ function! SearchWordByGrep()
     " 使用grep查询
     " 飞一般的速度
     let wd = expand("<cword>")
+    echo "searching " . wd . ", wait a moment ..."
     let len1 = strlen(wd)
     let len2 = strlen(substitute(wd, ".", "x", "g"))
     " 中文字符串 - vimgrep

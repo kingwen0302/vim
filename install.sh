@@ -41,7 +41,7 @@ if [[ "$(cat /proc/version | grep centos)" != "" ]]; then
 yum install ${CENTOS_DEPENDANT} -y
 fi
 ## git clone https://github.com/VundleVim/Vundle.vim.git ${CUR_DIR}/bundle/Vundle.vim
-git clone https://github.com/junegunn/vim-plug.git ${CUR_DIR}/Plug/vim-plug
+git clone --depth 1 https://github.com/junegunn/vim-plug.git ${CUR_DIR}/Plug/vim-plug
 mkdir -p ${CUR_DIR}/Plug/vim-plug/autoload
 cp ${CUR_DIR}/Plug/vim-plug/plug.vim ${CUR_DIR}/Plug/vim-plug/autoload
 

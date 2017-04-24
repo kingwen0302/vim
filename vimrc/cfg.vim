@@ -2,7 +2,7 @@
 let g:proj_company = [
             \ { "name": "[公司]server",    "path": "E:/qqjy/server/trunk"},
             \ { "name": "[公司]协议",      "path": "E:/qqjy/public/proto"},
-            \ { "name": "[公司]004701000", "path": "E:/qqjy/server/branches/qqjy_cn_004701000"},
+            \ { "name": "[公司]005401000", "path": "E:/qqjy/server/branches/qqjy_cn_005401000"},
             \ { "name": "[公司]jy",        "path": "E:/jy_server/trunk/cymmo"},
             \ { "name": "[公司]版署服",    "path": "E:/qqjy/server/branches/cymmo_20160930_002610000"},
             \ { "name": "[公司]jy_web",    "path": "E:/qqjy/jy_server/www"},

@@ -3,3 +3,4 @@ Plug
 *.bz2
 .netrwhist
 *.swp
+erlang_data_list.vim
