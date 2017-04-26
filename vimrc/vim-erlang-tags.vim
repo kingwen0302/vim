@@ -1,5 +1,6 @@
 function! MyErlangTags()
     call SetProjectRoot()
+    let g:erlang_tags_otp = 1
     let g:erlang_tags_outfile = g:project_root . "/tags"
     :ErlangTags
 endfunction

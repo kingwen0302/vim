@@ -88,7 +88,11 @@ function! s:ProjectLeaderf(cmd)
     endfor
 
     if a:cmd == 'f' 
-        exec "Leaderf " . dir
+        if g:has_python == 1
+            exec "Leaderf " . dir
+        else
+            exec "CtrlP " . dir
+        endif
     elseif a:cmd == 'u'
         exec "SVN update " . dir
     elseif a:cmd == 'c'
