@@ -22,12 +22,12 @@ let g:menu_list = [
             \            {"name" : "&Fixedsys字体",      "os" : "win32", "view": "<TAB>\:set\\ guifont=Fixedsys\:h12",      "cmd" : ":set guifont=Fixedsys:h12<CR>" },
             \            {"name" : "&Consolas字体-16",   "os" : "win32", "view": "<TAB>\:set\\ guifont=Consolas\:h16",      "cmd" : ":set guifont=Consolas:h16<CR>" },
             \            {"name" : "&Consolas字体-18",   "os" : "win32", "view": "<TAB>\:set\\ guifont=Consolas\:h18",      "cmd" : ":set guifont=Consolas:h18<CR>" },
-            \            {"name" : "&Courier\\ New字体", "os" : "win32", "view": "<TAB>\:set\\ guifont=Courier\\ New\:h16", "cmd" : "set guifont=Courier\ New:h16<CR>" },
+            \            {"name" : "&Courier\\ New字体", "os" : "win32", "view": "<TAB>\:set\\ guifont=Courier\\ New\:h16", "cmd" : ":set guifont=Courier\ New:h16<CR>" },
             \            {"name" : "&Monaco字体",        "os" : "win32", "view": "<TAB>\:set\\ guifont=Monaco\:h14",        "cmd" : ":set guifont=Monaco:h14<CR>" },
             \        
             \            {"name" : "&Fixedsys字体",      "os" : "unix", "view": "<TAB>\:set\\ guifont=Fixedsys\\ 12",      "cmd" : ":set guifont=Fixedsys\ 12<CR>" },
             \            {"name" : "&Consolas字体",      "os" : "unix", "view": "<TAB>\:set\\ guifont=Consolas\\ 18",      "cmd" : ":set guifont=Consolas\ 18<CR>" },
-            \            {"name" : "&Courier\\ New字体", "os" : "unix", "view": "<TAB>\:set\\ guifont=Courier\\ New\\ 16", "cmd" : "set guifont=Courier\ New\ 16<CR>" },
+            \            {"name" : "&Courier\\ New字体", "os" : "unix", "view": "<TAB>\:set\\ guifont=Courier\\ New\\ 16", "cmd" : ":set guifont=Courier\ New\ 16<CR>" },
             \            {"name" : "&Monaco字体",        "os" : "unix", "view": "<TAB>\:set\\ guifont=Monaco\\ 14",        "cmd" : ":set guifont=Monaco\ 14<CR>" },
             \        
             \            {"name" : "-SEP1-" ,            "os" : "all", "view": "",                                        "cmd" : "<Nop>" },
@@ -38,10 +38,13 @@ let g:menu_list = [
             \            {"name" : "&zellner主题",       "os" : "all", "view": "<TAB>\:colo\\ zellner",                   "cmd" : ":colo zellner<CR>" },
             \            {"name" : "&solarized-dark主题","os" : "all", "view": "<TAB>\:colo\\ solarized",                 "cmd" : ":set background=dark<CR>:colo solarized<CR>" },
             \            {"name" : "&solarized-light主题",  "os" : "all", "view": "<TAB>\:colo\\ solarized",              "cmd" : ":set background=light<CR>:colo solarized<CR>" },
+            \            {"name" : "随机主题",           "os" : "all", "view": "<TAB>\:ColorRand",                        "cmd" : ":ColorRand<CR>" },
             \        
             \            {"name" : "-SEP2-" ,            "os" : "win32", "view": "", "cmd" : "<Nop>" },
             \            {"name" : "&透明225",           "os" : "win32", "view": "", "cmd" : ":call libcallnr('vimtweak.dll', 'SetAlpha', 225) <CR>" },
             \            {"name" : "&不透明",            "os" : "win32", "view": "", "cmd" : ":call libcallnr('vimtweak.dll', 'SetAlpha', 255) <CR>" },
+            \            {"name" : "最前端显示",         "os" : "win32", "view": "", "cmd" : ":call libcallnr('vimtweak.dll', 'EnableTopMost', 1) <CR>" },
+            \            {"name" : "最前端取消",         "os" : "win32", "view": "", "cmd" : ":call libcallnr('vimtweak.dll', 'EnableTopMost', 0) <CR>" },
             \            {"name" : "&Cygwin",            "os" : "win32", "view": "", "cmd" : ":ConqueTerm C:\\cygwin64\\Cygwin.bat<CR>" },
             \        ]
             \    ],
@@ -59,9 +62,10 @@ let g:menu_list = [
             \            {"name" : "转为unix编码格式",           "os" : "all", "view": "",                        "cmd" : ":set fileformat=unix<CR>" },
             \            {"name" : "转为dos编码格式" ,           "os" : "all", "view": "",                        "cmd" : ":set fileformat=dos<CR>" },
             \            {"name" : "-SEP2-" ,                    "os" : "all", "view": "",                        "cmd" : "<Nop>" },
-            \            {"name" : "去掉^M" ,                    "os" : "all", "view": "",                        "cmd" : ":%s/\r\+$//e<CR>" },
+            \            {"name" : "去掉^M" ,                    "os" : "all", "view": "<Tab>\:%s/\\\\r\\\\+$//e","cmd" : ":%s/\\r\\+$//e<CR>" },
             \            {"name" : "-SEP3-" ,                    "os" : "all", "view": "",                        "cmd" : "<Nop>" },
-            \            {"name" : "项目列表",                   "os" : "all", "view": "",                        "cmd" : ":ProjectView<CR>" },
+            \            {"name" : "项目列表",                   "os" : "all", "view": "<Tab>\:ProjectView",      "cmd" : ":ProjectView<CR>" },
+            \            {"name" : "开启/关闭自动补全",          "os" : "all", "view": "<Tab>\:NeoCompleteToggle","cmd" : ":NeoCompleteToggle<CR>" },
             \        ]
             \    ],
             \]
