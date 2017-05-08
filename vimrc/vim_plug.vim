@@ -18,9 +18,11 @@ Plug 'https://github.com/junegunn/vim-plug.git'
 " Leaderf/CtrlP实现同样的功能
 " Leaderf需要python支持,性能优
 if g:has_python == 1
-  Plug 'https://github.com/Yggdroot/LeaderF.git', {'branch': 'v1.01'}
+    Plug 'https://github.com/Yggdroot/LeaderF.git', {'branch': 'v1.01'}
+
+    Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
 else
-  Plug 'https://github.com/kien/ctrlp.vim.git'
+    Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
 endif
 
 if g:has_python == 1
@@ -31,9 +33,9 @@ Plug 'taglist.vim'
 Plug 'https://github.com/foursking/vim-doc-cn.git'
 Plug 'https://github.com/mbbill/fencview.git'
 Plug 'https://github.com/kingwen0302/code_complete.git'
-if !has('win32')
-    Plug 'https://github.com/Lokaltog/vim-powerline.git'
-endif
+" if !has('win32')
+"     Plug 'https://github.com/Lokaltog/vim-powerline.git'
+" endif
 Plug 'https://github.com/vim-scripts/winmanager.git'
 Plug 'https://github.com/jlanzarotta/bufexplorer.git', {'branch': 'v7.4.6'}
 Plug 'https://github.com/kingwen0302/erlang_skel.git'
@@ -76,12 +78,13 @@ Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/scrooloose/nerdcommenter.git'
 Plug 'https://github.com/vim-erlang/erlang-motions.vim.git'
 Plug 'https://github.com/haya14busa/incsearch.vim.git'
-Plug 'https://github.com/mhinz/vim-signify.git'
+" 版本管理
+" Plug 'https://github.com/mhinz/vim-signify.git'
 Plug 'https://github.com/mhinz/vim-startify.git'
 
 " Plug 'https://github.com/yegappan/mru.git'
 " Plug 'https://github.com/wakatime/vim-wakatime.git'
-Plug 'https://github.com/scrooloose/syntastic.git'
+" Plug 'https://github.com/scrooloose/syntastic.git'
 " Plug 'https://github.com/xolox/vim-misc.git'
 " Plug 'https://github.com/vim-scripts/AnsiEsc.vim.git'
 " Plug 'https://github.com/xolox/vim-lua-ftplugin.git'

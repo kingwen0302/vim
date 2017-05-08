@@ -13,6 +13,7 @@ exe "source " . g:my_vimrc_dir . "/vimrc/statusline.vim"
 
 if g:has_python == 1
    exe "source " . g:my_vimrc_dir . "/vimrc/Leaderf.vim"
+   exe "source " . g:my_vimrc_dir . "/vimrc/ctrlp.vim"
 else
    exe "source " . g:my_vimrc_dir . "/vimrc/ctrlp.vim"
 endif
