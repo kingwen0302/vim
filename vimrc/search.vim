@@ -71,7 +71,11 @@ function! SearchWordDialog()
         " 中文字符串 - vimgrep
         " 英文字符串 - grep
         if len1 == len2
+            let g:grepper.ag.grepprg = substitute(g:grepper.ag.grepprg , "--word-regexp", "", "")
+            let g:grepper.grep.grepprg = substitute(g:grepper.grep.grepprg , "-nraHwi", "-nraHi", "")
             try | exe "Grepper -query " . str | catch | | endtry
+            let g:grepper.ag.grepprg .= " --word-regexp"
+            let g:grepper.grep.grepprg = substitute(g:grepper.grep.grepprg , "-nraHi", "-nraHwi", "")
         else
             try | execute "vimgrep \"" . str . "\" **/*.[ehpc][rhtf][lpmg]" | catch | | endtry
             copen
