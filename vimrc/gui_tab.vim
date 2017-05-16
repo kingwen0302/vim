@@ -1,6 +1,6 @@
 " 关于标签页的标题修改 "
 " 使用了自定义函数  GuiTabLabel()
-set showtabline=2 " 强制显示标签栏
+" set showtabline=2 " 强制显示标签栏
 set guitablabel=%{GuiTabLabel()}"
 
 "
