@@ -42,7 +42,7 @@ colo desert
 if has('win32') || has('win64')
     set guifont=Consolas:h18
 else
-    set guifont=Consolas\ 16
+    set guifont=DejaVu\ Sans\ Mono\ 16
 endif
 
 set nu
