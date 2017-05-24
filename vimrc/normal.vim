@@ -26,7 +26,7 @@ if has("autocmd")
   filetype plugin indent on
 endif
 
-if has("gui_running")
+if has("gui_running") && (has('win32') || has('win64'))
     au GUIEnter * simalt ~x
 endif
 
