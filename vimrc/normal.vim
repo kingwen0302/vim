@@ -78,7 +78,7 @@ if has("win32")
     set cc=80        " 显示对齐线
 endif
 
-set tags=tags;
+set tags=vim_tags;
 
 " highlight StatusLine cterm = bold ctermfg = yellow ctermbg = blue
 
