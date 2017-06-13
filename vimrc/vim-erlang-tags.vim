@@ -1,7 +1,7 @@
 function! MyErlangTags()
     call SetProjectRoot()
     let g:erlang_tags_otp = 1
-    let g:erlang_tags_outfile = g:project_root . "/vim_tags"
+    let g:erlang_tags_outfile = g:project_root . "/.vim.tags"
     :ErlangTags
 endfunction
 

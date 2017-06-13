@@ -1,6 +1,6 @@
 exe "source " . g:my_vimrc_dir . "/vimrc/first.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/has_python.vim"
-exe "source " . g:my_vimrc_dir . "/vimrc/cfg.vim"
+exe "source " . g:my_vimrc_dir . "/vimrc/project_config.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/def_menu.vim"
 " exe "source " . g:my_vimrc_dir . "/vimrc/bundle.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/vim_plug.vim"

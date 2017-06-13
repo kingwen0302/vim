@@ -20,7 +20,7 @@
 
 |配置|描述|
 |:---|:---|
-|项目配置[cfg.vim]|根目录确定方式:<br/>1. 项目根目录存在`.projectile`文件<br/>2. 项目根目录存在`.svn`,`.hg`,`.git`|
+|项目配置[project_config.vim]|根目录确定方式:<br/>1. 项目根目录存在`.projectile`文件<br/>2. 项目根目录存在`.svn`,`.hg`,`.git`|
 |菜单配置[def_menu.vim]|
 |SVN配置[tortoisesvn.vim]|
 |文件查询|ctrlp.vim: vimscript实现<br/>leaderf.vim: python实现|
