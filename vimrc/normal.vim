@@ -49,6 +49,7 @@ set nu
 set whichwrap+=<,>,h,l
 set laststatus=2
 set ignorecase
+set smartcase
 set showcmd
 set showmatch
 set incsearch
@@ -96,4 +97,4 @@ set fileformats=unix,dos
 let mapleader = ","
 
 " 增加鼠标支持
-" set mouse=a
+set mouse=a

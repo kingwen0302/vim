@@ -4,11 +4,7 @@ exe "source " . g:my_vimrc_dir . "/vimrc/project_config.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/def_menu.vim"
 " exe "source " . g:my_vimrc_dir . "/vimrc/bundle.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/vim_plug.vim"
-" if has("win32")
-"    exe "source " . g:my_vimrc_dir . "/vimrc/statusline.vim"
-" else
-"    exe "source " . g:my_vimrc_dir . "/vimrc/vim-powerline.vim"
-" endif
+" exe "source " . g:my_vimrc_dir . "/vimrc/vim-powerline.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/statusline.vim"
 
 if g:has_python == 1
@@ -42,7 +38,7 @@ exe "source " . g:my_vimrc_dir . "/vimrc/auto_change_colorscheme.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/normal.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/map.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/vim-erlang-tags.vim"
-exe "source " . g:my_vimrc_dir . "/vimrc/make.vim"
+exe "source " . g:my_vimrc_dir . "/vimrc/erlang_make.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/nerdcommenter.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/tagbar.vim"
 exe "source " . g:my_vimrc_dir . "/vimrc/erlang_skel.vim"
