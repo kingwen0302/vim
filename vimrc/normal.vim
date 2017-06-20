@@ -49,7 +49,6 @@ set nu
 set whichwrap+=<,>,h,l
 set laststatus=2
 set ignorecase
-set smartcase
 set showcmd
 set showmatch
 set incsearch

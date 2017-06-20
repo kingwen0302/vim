@@ -66,6 +66,7 @@ let g:menu_list = [
             \            {"name" : "-SEP3-" ,                    "os" : "all", "view": "",                        "cmd" : "<Nop>" },
             \            {"name" : "项目列表",                   "os" : "all", "view": "<Tab>\:ProjectView",      "cmd" : ":ProjectView<CR>" },
             \            {"name" : "开启/关闭自动补全",          "os" : "all", "view": "<Tab>\:NeoCompleteToggle","cmd" : ":NeoCompleteToggle<CR>" },
+            \            {"name" : "使用CtrlP插件",              "os" : "all", "view": "<Tab>\:let\\ g:has_python=0","cmd" : ":let g:has_python=0<CR>" },
             \        ]
             \    ],
             \]
