@@ -75,4 +75,4 @@ NORMAL模式下：`Ctrl+v`或者 `Ctrl-q`(windows) -> hjkl选择 -> `yy`|`dd` ->
 |Ctrl-w o|最大化当前窗口|
 |:vs|垂直分割|
 |:sp|水平分割|
-
+|CtrlP简单使用|<c-t>新标签也打开<br/><c-x>水平分割<br/><c-v>垂直分割<cr/><c-z><c-o>在新标签也同时打开多个文件<br/>|
