@@ -70,8 +70,8 @@ NORMAL模式下：`Ctrl+v`或者 `Ctrl-q`(windows) -> hjkl选择 -> `yy`|`dd` ->
 |F10|聚焦菜单栏|
 |F11|项目快速切换|:call ChangeProj()|
 |F12|项目内文件搜索|:call LeaderF_func() <br/>:call CtrlP_func()|
-|Ctrl-Enter|最近打开文件|:LeaderfMru <br/>:CtrlPMRUFiles|
-|Shift-Enter|最近打开的项目文件|:call MruCwd()|
+|Ctrl-Enter|最近打开的项目文件|:call MruCwd()|
+|Shift-Enter|最近打开文件|:LeaderfMru <br/>:CtrlPMRUFiles|
 |Ctrl-w o|最大化当前窗口|
 |:vs|垂直分割|
 |:sp|水平分割|

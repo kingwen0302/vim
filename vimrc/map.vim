@@ -22,5 +22,5 @@ map <F9> :SearchWordByGrep<CR>
 map <C-F9> :SearchWordDialog<CR>
 map <F11> :ChangeProject<CR>
 map <F12> :LeaderfOrCtrlp<CR>
-map <S-Enter> :MruCwd<CR>
-map <C-Enter> :MruAll<CR>
+map <C-Enter> :MruCwd<CR>
+map <S-Enter> :MruAll<CR>
