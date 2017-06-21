@@ -64,7 +64,7 @@ NORMAL模式下：`Ctrl+v`或者 `Ctrl-q`(windows) -> hjkl选择 -> `yy`|`dd` ->
 |Ctrl-F4|关闭窗口|:close|
 |F5|复制当前标签到新标签|:tab split|
 |F6|跳转到光标所在文本的文件|:call FindFile()|
-|F7|显示文件目录/BUFFER/tag,会自动修改字体|:TlistToggle|
+|F7|显示文件目录,会自动修改字体|:TlistToggle|
 |F9|光标处文本项目内搜索|:call SearchWordByGrep()|
 |Ctrl+F9|弹框输入字符串在项目内搜索|:call SearchWordDialog()|
 |F10|聚焦菜单栏|
@@ -75,4 +75,4 @@ NORMAL模式下：`Ctrl+v`或者 `Ctrl-q`(windows) -> hjkl选择 -> `yy`|`dd` ->
 |Ctrl-w o|最大化当前窗口|
 |:vs|垂直分割|
 |:sp|水平分割|
-|CtrlP简单使用|<c-t>新标签也打开<br/><c-x>水平分割<br/><c-v>垂直分割<cr/><c-z><c-o>在新标签也同时打开多个文件<br/>|
+|CtrlP简单使用|`<c-t>`新标签也打开<br/>`<c-x>`水平分割<br/>`<c-v>`垂直分割<br/>`<c-z><c-o>`在新标签也同时打开多个文件<br/>|

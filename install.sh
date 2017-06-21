@@ -57,6 +57,7 @@ exe "source " .  g:my_vimrc_dir . "/vimrc/myvimrc"
 EOF
 ## 安装插件
 ## vim -c ":BundleInstall" -c ":exit" -c ":exit"
-vim -c ":PlugInstall" -c ":exit" -c ":exit"
+## vim -c ":PlugInstall" -c ":exit" -c ":exit"
+vim -c ":PlugInstall" -c ":qall"
 ## 安装完成
 echo "finish"
