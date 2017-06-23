@@ -10,7 +10,7 @@ if is_has != ""
     " 同步操作
     let w:testing = 1
 
-    let g:grepper.file_list = ["erl", "hrl", "php", "cfg", "htm", "vim"]
+    let g:grepper.file_list = g:file_type_list
 
     let g:grepper.ag.file_list = []
     let g:grepper.grep.file_list = []

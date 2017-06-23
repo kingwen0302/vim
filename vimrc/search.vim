@@ -24,17 +24,15 @@ endfunction
 function! JumpToFile()
     call SetProjectRoot()
     let search_word = expand("<cword>")
-    try 
-        exe "find ./**/" . search_word . ".erl" 
-        return
-    catch
-        try 
-            exe "find ./**/" . search_word . ".hrl" 
+
+    for i in g:file_type_list
+        try
+            exe "find ./**/" . search_word . "." . i
             return
         catch
             :
         endtry
-    endtry
+    endfor
     echo search_word.".[eh]rl ]not found"
 endfunction
 
@@ -73,7 +71,7 @@ function! SearchWordDialog()
         if len1 == len2
             let g:grepper.ag.grepprg = substitute(g:grepper.ag.grepprg , "--word-regexp", "", "")
             let g:grepper.grep.grepprg = substitute(g:grepper.grep.grepprg , "-nraHwi", "-nraHi", "")
-            try | exe "Grepper -query " . str | catch | | endtry
+            try | exe "Grepper -query \"" . str . "\"" | catch | | endtry
             let g:grepper.ag.grepprg .= " --word-regexp"
             let g:grepper.grep.grepprg = substitute(g:grepper.grep.grepprg , "-nraHi", "-nraHwi", "")
         else
