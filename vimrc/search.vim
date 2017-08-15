@@ -49,9 +49,16 @@ function! SearchWordByGrep()
     if len1 == len2
         :Grepper -cword
     else
-        exe "vimgrep \"\\<" . wd . "\\>\" **/*.[ehpc][rhtf][lpmg]"
+        exe "vimgrep \"\\<" . wd . "\\>\" " . VimGrepFileType()
         copen
     endif
+endfunction
+
+function! SearchWordByVimGrep()
+    call SetProjectRoot()
+    let wd = expand("<cword>")
+    echo "searching " . wd . ", wait a moment ..."
+    exe "vimgrep \"\\<" . wd . "\\>\" " . VimGrepFileType()
 endfunction
 
 function! SearchWordDialog()
@@ -75,10 +82,18 @@ function! SearchWordDialog()
             let g:grepper.ag.grepprg .= " --word-regexp"
             let g:grepper.grep.grepprg = substitute(g:grepper.grep.grepprg , "-nraHi", "-nraHwi", "")
         else
-            try | execute "vimgrep \"" . str . "\" **/*.[ehpc][rhtf][lpmg]" | catch | | endtry
+            try | execute "vimgrep \"" . str . "\" " . VimGrepFileType() | catch | | endtry
             copen
         endif
     endif
+endfunction
+
+function! VimGrepFileType()
+    let file_list = []
+    for i in g:file_type_list
+        call add(file_list, "**/*." . i)
+    endfor
+    return join(file_list, " ")
 endfunction
 
 function! MruCwd()
@@ -109,6 +124,7 @@ function! MruAll()
 endfunction
 
 command! -nargs=0 SearchWordByGrep call SearchWordByGrep()
+command! -nargs=0 SearchWordByVimGrep call SearchWordByVimGrep()
 command! -nargs=0 SearchWordDialog call SearchWordDialog()
 command! -nargs=0 MruCwd call MruCwd()
 command! -nargs=0 MruAll call MruAll()
