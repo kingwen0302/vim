@@ -7,12 +7,17 @@
 " TODO 中间不能有空格
 " au BufNewFile,BufRead data_task*.erl,data_channel*.log set filetype=null
 " set renderoptions=type:directx,renmode:5,taamode:1
-au BufNewFile,BufRead pt_*.erl set filetype=null
-if exists("g:erlang_data_list[1]")
-    for f in g:erlang_data_list
-        exe "au BufNewFile,BufRead " . f . " set filetype=null"
-    endfor
-endif
+" au BufNewFile,BufRead pt_*.erl set filetype=null
+
+function! SetNullFileType()
+    let size = getfsize(expand("%"))
+    " 50kB
+    if size >= 1024*50
+        :normal zR
+        :set filetype=null
+    endif
+endfunction
+au BufNewFile,BufRead * :call SetNullFileType()
 
 if has("syntax")
   syntax on
