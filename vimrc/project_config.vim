@@ -5,15 +5,20 @@ let s:all_proj_list_src = [
             \ { "own_proj": ["qqjy"],               "name" : "[公司]QQJY_006501000", "path": "E:/qqjy/qqjy_branch/qqjy_cn_006501000"},
             \ { "own_proj": ["qqjy"],               "name" : "[公司]QQJY_版署服",    "path": "E:/qqjy/server/branches/cymmo_20160930_002610000"},
             \ { "own_proj": ["qqjy"],               "name" : "[公司]QQJY_策划配置",  "path": "E:/qqjy/plan"},
-            \ { "own_proj": ["s7yy"],               "name" : "[公司]S7YY_服务端",    "path": "E:/s7yy/s7_server"},
+            \
+            \ { "own_proj": ["s7yy"],               "name" : "[公司]S7YY_服务端",    "path": "E:/s7yy/s7yy_server"},
+            \
             \ { "own_proj": ["jy", "qqjy"],         "name" : "[公司]JY_服务端",      "path": "E:/jy_server/trunk/cymmo"},
             \ { "own_proj": ["jy"],                 "name" : "[公司]JY_web",         "path": "E:/jy_server/www"},
+            \
             \ { "own_proj": ["my", "qqjy", "s7yy"], "name" : "[公司]MY_web",         "path": "E:/web"},
             \ { "own_proj": ["my", "qqjy", "s7yy"], "name" : "[公司]MY_BLOG",        "path": "E:/blog/blog_mingilin/blog_source"},
             \ { "own_proj": ["my", "qqjy", "s7yy"], "name" : "[公司]MY_RUST",        "path": "E:/rust"},
             \ { "own_proj": ["my", "qqjy", "s7yy"], "name" : "[公司]MY_Elixir",      "path": "E:/elixir_learn"},
+            \
             \ { "own_proj": ["person"],             "name" : "[个人]qqjy",    "path": "d:/qqjy/server/trunk"},
             \ { "own_proj": ["person"],             "name" : "[个人]rust",    "path": "c:/users/mingilin/rust_learn/project"},
+            \
             \ { "own_proj": ["common"],             "name" : "[公共]VIM配置", "path": g:my_vimrc_dir . "/vimrc"},
             \]
 
@@ -56,14 +61,19 @@ function! GetProjects(allProj, selectProj)
 endfunction
 
 " QQJY
+" gvim.exe --cmd "let g:select_proj=1"
 if exists("g:select_proj") && g:select_proj == 1
     let g:proj_company = GetProjects(g:all_proj_list, "qqjy")
 " S7YY
+" gvim.exe --cmd "let g:select_proj=1"
 elseif exists("g:select_proj") && g:select_proj == 2   
     let g:proj_company = GetProjects(g:all_proj_list, "s7yy")
 " ALL
-else                                
-    let g:proj_company = g:all_proj_list
+" gvim.exe
+else
+    let g:proj_company = GetProjects(g:all_proj_list, "qqjy")
+    let g:proj_company += GetProjects(g:all_proj_list, "s7yy")
+    let g:proj_company = uniq(g:proj_company)
 endif
 
 let g:proj_person = GetProjects(g:all_proj_list, "person")

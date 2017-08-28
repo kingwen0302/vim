@@ -8,11 +8,12 @@
 " au BufNewFile,BufRead data_task*.erl,data_channel*.log set filetype=null
 " set renderoptions=type:directx,renmode:5,taamode:1
 " au BufNewFile,BufRead pt_*.erl set filetype=null
+" autocmd BufWritePost *fair_1v1*.[eh]rl  :normal gg=G
 
 function! SetNullFileType()
     let size = getfsize(expand("%"))
     " 50kB
-    if size >= 1024*50
+    if size >= 1024*100
         :normal zR
         :set filetype=null
     endif
