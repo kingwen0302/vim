@@ -81,6 +81,7 @@ Plug 'https://github.com/haya14busa/incsearch.vim.git'
 " 版本管理
 " Plug 'https://github.com/mhinz/vim-signify.git'
 Plug 'https://github.com/mhinz/vim-startify.git'
+Plug 'https://github.com/luzhlon/popup.vim.git'
 
 " Plug 'https://github.com/yegappan/mru.git'
 " Plug 'https://github.com/wakatime/vim-wakatime.git'
