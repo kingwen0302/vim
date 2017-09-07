@@ -60,6 +60,16 @@ function! GetProjects(allProj, selectProj)
     return sort(proj_list, "ProjectSort")
 endfunction
 
+function! Uniq(src_list)
+    let ret_list = []
+    for i in a:src_list
+        if index(ret_list, i) == -1
+            call add(ret_list, i)
+        endif
+    endfor
+    return ret_list
+endfunction
+
 " QQJY
 " gvim.exe --cmd "let g:select_proj=1"
 if exists("g:select_proj") && g:select_proj == 1
@@ -73,7 +83,7 @@ elseif exists("g:select_proj") && g:select_proj == 2
 else
     let g:proj_company = GetProjects(g:all_proj_list, "qqjy")
     let g:proj_company += GetProjects(g:all_proj_list, "s7yy")
-    let g:proj_company = uniq(g:proj_company)
+    let g:proj_company = Uniq(g:proj_company)
 endif
 
 let g:proj_person = GetProjects(g:all_proj_list, "person")
