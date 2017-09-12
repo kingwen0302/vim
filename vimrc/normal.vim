@@ -11,11 +11,14 @@
 " autocmd BufWritePost *fair_1v1*.[eh]rl  :normal gg=G
 
 function! SetNullFileType()
-    let size = getfsize(expand("%"))
-    " 50kB
-    if size >= 1024*100
-        :normal zR
+    " 目录包括'\data\'(windows), '/data/'(linux)
+    " 或者文件大于200K时
+    let isNullWin = stridx(expand("%:p"), "\\data\\") != -1 
+    let isNullLinux = stridx(expand("%:p"), "/data/") != -1 && stridx(expand("%:p"), "/data/") != 0
+    let isNullFileSize = getfsize(expand("%")) >= 1024*200
+    if isNullWin || isNullLinux || isNullFileSize
         :set filetype=null
+        :normal zR
     endif
 endfunction
 au BufNewFile,BufRead * :call SetNullFileType()
