@@ -20,7 +20,7 @@ call popup#add('menu', '菜单',
         \['c', '最近打开项目文件', ':MruCwd'],
         \['a', '最近打开文件', ':MruAll'],
         \['j', '跳到文件', ':JumpToFile'],
-        \['m', '编译文件', ':ErlangMake']]
+        \['m', '跳到文件', ':ErlangMake']]
     \],
     \['m', '杂项', [
         \['m', '显示/关闭菜单栏', ':MenuToggle']]
