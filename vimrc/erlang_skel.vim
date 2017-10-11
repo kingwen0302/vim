@@ -6,6 +6,7 @@ command ErlangModule      :ErlangTemplete 1 module
 command ErlangApplication :ErlangTemplete 1 application
 command ErlangSupervisor  :ErlangTemplete 1 supervisor
 command ErlangGenServer   :ErlangTemplete 1 gen_server_1
+command ErlangGenServer1   :ErlangTemplete 1 gen_server
 command ErlangGenFsm      :ErlangTemplete 1 gen_fsm
 command ErlangGenEvent    :ErlangTemplete 1 gen_event
 command ErlangHeader      :ErlangTemplete 1 header

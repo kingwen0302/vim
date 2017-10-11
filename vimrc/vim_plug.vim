@@ -95,6 +95,15 @@ Plug 'https://github.com/vim-scripts/DrawIt.git'
 " Plug 'https://github.com/vim-scripts/L9.git'
 " Plug 'https://github.com/vim-scripts/FuzzyFinder.git'
 " Plug 'https://github.com/fholgado/minibufexpl.vim.git'
+Plug 'KabbAmine/zeavim.vim', {'on': [
+			\	'Zeavim', 'Docset',
+			\	'<Plug>Zeavim',
+			\	'<Plug>ZVVisSelection',
+			\	'<Plug>ZVKeyDocset',
+			\	'<Plug>ZVMotion'
+			\ ]}
+
+Plug 'dyng/ctrlsf.vim'
 
 call plug#end()
 filetype plugin indent on
