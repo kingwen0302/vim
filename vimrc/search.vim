@@ -1,21 +1,26 @@
 function! UpProjectRoot()
     let rootpath = findfile('.projectile', '.;')
+    " 有设置.projectile
     if !empty(rootpath)
         let rootpath = fnamemodify(rootpath, ':h')
         let g:project_root = fnameescape(rootpath)
         return
-    else
-        for repo in ['.svn', '.hg', '.git']
-            let repopath = finddir(repo, '.;')
-            if !empty(repopath)
-                let repopath = fnamemodify(repopath, ':h')
-                let g:project_root = fnameescape(repopath)
-                return
-            endif
-        endfor
     endif
+    " 没有设置.projectile
+    " 搜素.svn, .hg, .git
+    for repo in ['.svn', '.hg', '.git']
+        let repopath = finddir(repo, '.;')
+        if !empty(repopath)
+            let repopath = fnamemodify(repopath, ':h')
+            let g:project_root = fnameescape(repopath)
+            return
+        endif
+    endfor
+    " 都没有匹配到
+    " 设置当前目录
     let g:project_root = "./"
 endfunction
+
 function! SetProjectRoot()
     call UpProjectRoot()
     execute 'cd' g:project_root
@@ -67,24 +72,30 @@ function! SearchWordDialog()
     else
         let str = input("查询字符串", expand("%:t:r") . ":" . expand("<cword>"))
     endif
-    if str != ""
-        call SetProjectRoot()
-        " silent! exe "vimgrep \"" . str . "\" E:/g1/**/*.[eh]rl"
-        " 忽略错误
-        let len1 = strlen(str)
-        let len2 = strlen(substitute(str, ".", "x", "g"))
-        " 中文字符串 - vimgrep
-        " 英文字符串 - grep
-        if len1 == len2
-            let g:grepper.ag.grepprg = substitute(g:grepper.ag.grepprg , "--word-regexp", "", "")
-            let g:grepper.grep.grepprg = substitute(g:grepper.grep.grepprg , "-nraHwi", "-nraHi", "")
-            try | exe "Grepper -query \"" . str . "\"" | catch | | endtry
-            let g:grepper.ag.grepprg .= " --word-regexp"
-            let g:grepper.grep.grepprg = substitute(g:grepper.grep.grepprg , "-nraHi", "-nraHwi", "")
-        else
-            try | execute "vimgrep \"" . str . "\" " . VimGrepFileType() | catch | | endtry
-            copen
-        endif
+
+    " 是否为空字符串?
+    if str == ""
+        echomsg "搜素字符串为空"
+        return
+    endif
+
+    " 开始搜索
+    call SetProjectRoot()
+    " silent! exe "vimgrep \"" . str . "\" E:/g1/**/*.[eh]rl"
+    " 忽略错误
+    let len1 = strlen(str)
+    let len2 = strlen(substitute(str, ".", "x", "g"))
+    " 中文字符串 - vimgrep
+    " 英文字符串 - grep
+    if len1 == len2
+        let g:grepper.ag.grepprg = substitute(g:grepper.ag.grepprg , "--word-regexp", "", "")
+        let g:grepper.grep.grepprg = substitute(g:grepper.grep.grepprg , "-nraHwi", "-nraHi", "")
+        try | exe "Grepper -query \"" . str . "\"" | catch | | endtry
+        let g:grepper.ag.grepprg .= " --word-regexp"
+        let g:grepper.grep.grepprg = substitute(g:grepper.grep.grepprg , "-nraHi", "-nraHwi", "")
+    else
+        try | execute "vimgrep \"" . str . "\" " . VimGrepFileType() | catch | | endtry
+        copen
     endif
 endfunction
 

@@ -38,6 +38,12 @@ let g:menu_list = [
             \            {"name" : "&zellner主题",       "os" : "all", "view": "<TAB>\:colo\\ zellner",                   "cmd" : ":colo zellner<CR>" },
             \            {"name" : "&solarized-dark主题","os" : "all", "view": "<TAB>\:colo\\ solarized",                 "cmd" : ":set background=dark<CR>:colo solarized<CR>" },
             \            {"name" : "&solarized-light主题",  "os" : "all", "view": "<TAB>\:colo\\ solarized",              "cmd" : ":set background=light<CR>:colo solarized<CR>" },
+            \            {"name" : "&ekinivim主题",  "os" : "all", "view": "<TAB>\:colo\\ ekinivim",              "cmd" : ":colo ekinivim<CR>" },
+            \            {"name" : "&mod_tcsoft主题",  "os" : "all", "view": "<TAB>\:colo\\ mod_tcsoft",              "cmd" : ":colo mod_tcsoft<CR>" },
+            \            {"name" : "&osx_like主题",  "os" : "all", "view": "<TAB>\:colo\\ osx_like",              "cmd" : ":colo osx_like<CR>" },
+            \            {"name" : "&fruit主题",  "os" : "all", "view": "<TAB>\:colo\\ fruit",              "cmd" : ":colo fruit<CR>" },
+            \            {"name" : "&tolerable主题",  "os" : "all", "view": "<TAB>\:colo\\ tolerable",              "cmd" : ":colo tolerable<CR>" },
+            \            {"name" : "&materialtheme主题",  "os" : "all", "view": "<TAB>\:colo\\ materialtheme",              "cmd" : ":colo materialtheme<CR>" },
             \            {"name" : "随机主题",           "os" : "all", "view": "<TAB>\:ColorRand",                        "cmd" : ":ColorRand<CR>" },
             \        
             \            {"name" : "-SEP2-" ,            "os" : "win32", "view": "", "cmd" : "<Nop>" },

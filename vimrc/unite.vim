@@ -6,13 +6,14 @@ let file_command_candidates = [
             \ ]
 
 let project_command_candidates = [
-            \   ['> 1. 项目列表          :ProjectView',         ':ProjectView'],
-            \   ['> 2. 文件搜索          :LeaderfOrCtrlp',      ':LeaderfOrCtrlp'],
-            \   ['> 3. 字符搜索          :SearchWordByGrep',    ':SearchWordByGrep'],
-            \   ['> 4. 最近打开项目文件  :MruCwd',              ':MruCwd'],
-            \   ['> 5. 最近打开文件      :MruAll',              ':MruAll'],
-            \   ['> 6. 跳到文件          :JumpToFile',          ':JumpToFile'],
-            \   ['> 7. 编译文件          :ErlangMake',          ':ErlangMake'],
+            \   ['> 1. 项目列表                 :ProjectView',         ':ProjectView'],
+            \   ['> 2. 文件搜索                 :LeaderfOrCtrlp',      ':LeaderfOrCtrlp'],
+            \   ['> 3. 字符搜索                 :SearchWordByGrep',    ':SearchWordByGrep'],
+            \   ['> 4. 最近打开项目文件         :MruCwd',              ':MruCwd'],
+            \   ['> 5. 最近打开文件             :MruAll',              ':MruAll'],
+            \   ['> 6. 跳到文件                 :JumpToFile',          ':JumpToFile'],
+            \   ['> 7. 编译文件                 :ErlangMake',          ':ErlangMake'],
+            \   ['> 8. 字符搜素替换(不支持中文) :CtrlSF',              ':CtrlSF'],
             \ ]
 
 let font_win = [
