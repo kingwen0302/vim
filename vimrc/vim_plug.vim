@@ -30,7 +30,8 @@ if g:has_python == 1
 endif
 
 Plug 'https://github.com/vim-scripts/taglist.vim.git'
-Plug 'https://github.com/foursking/vim-doc-cn.git'
+" Plug 'https://github.com/foursking/vim-doc-cn.git'
+Plug 'https://github.com/yianwillis/vimcdoc.git'
 Plug 'https://github.com/mbbill/fencview.git'
 Plug 'https://github.com/kingwen0302/code_complete.git'
 " if !has('win32')
