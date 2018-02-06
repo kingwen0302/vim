@@ -81,7 +81,7 @@ set hlsearch
 set noeb         " 去掉输入错误的提示声音
 set ruler        " 打开状态栏标尺
 set magic        " 设置魔术
-if has("win32")
+if has('gui_running')
     set cursorline   " 高亮当前行
     set cursorcolumn " 高亮当前列 
     set cc=80        " 显示对齐线
