@@ -76,3 +76,8 @@ NORMAL模式下：`Ctrl+v`或者 `Ctrl-q`(windows) -> hjkl选择 -> `yy`|`dd` ->
 |:vs|垂直分割|
 |:sp|水平分割|
 |CtrlP简单使用|`<c-t>`新标签也打开<br/>`<c-x>`水平分割<br/>`<c-v>`垂直分割<br/>`<c-z><c-o>`在新标签也同时打开多个文件<br/>|
+
+## 多用户
+`vim.exe --cmd "let $HOME = 'C:/Users/用户名/.config/vim1'"`  
+`vim.exe --cmd "let $HOME = 'C:/Users/用户名/.config/vim2'"`  
+将`vimrc`放到`vimX`目录下
