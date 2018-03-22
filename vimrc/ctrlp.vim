@@ -1,6 +1,7 @@
 " ----------------------------------
 "  CtrlP插件配置
 " ----------------------------------
+let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn|log)$',
   \ 'file': '\v\.(exe|so|dll|o|py[co]|beam|dets|log)$',
@@ -12,5 +13,5 @@ let g:ctrlp_working_path_mode = "ra"
 let g:ctrlp_open_new_file = 't'
 let g:ctrlp_open_multiple_files = 't'
 let g:ctrlp_match_current_file = 1
-let g:ctrlp_root_markers = ['.projectile', '.git', '.svn']
+let g:ctrlp_root_markers = ['.projectile', '.svn', '.git']
 

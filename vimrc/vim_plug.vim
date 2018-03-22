@@ -85,6 +85,9 @@ Plug 'https://github.com/mhinz/vim-startify.git'
 " Plug 'https://github.com/luzhlon/popup.vim.git'
 Plug 'https://github.com/Shougo/unite.vim.git'
 
+Plug 'https://github.com/yami-beta/ctrlp-tabpage.git'
+Plug 'https://github.com/hara/ctrlp-colorscheme.git'
+
 " Plug 'https://github.com/yegappan/mru.git'
 " Plug 'https://github.com/wakatime/vim-wakatime.git'
 " Plug 'https://github.com/scrooloose/syntastic.git'
