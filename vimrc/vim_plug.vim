@@ -89,6 +89,8 @@ Plug 'https://github.com/Shougo/unite.vim.git'
 Plug 'https://github.com/hara/ctrlp-colorscheme.git'
 Plug 'https://github.com/DavidEGx/ctrlp-smarttabs.git'
 
+" Plug 'https://github.com/ggVGc/vim-fuzzysearch.git'
+
 " Plug 'https://github.com/yegappan/mru.git'
 " Plug 'https://github.com/wakatime/vim-wakatime.git'
 " Plug 'https://github.com/scrooloose/syntastic.git'
