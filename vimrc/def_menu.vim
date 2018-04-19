@@ -25,10 +25,9 @@ let g:menu_list = [
             \            {"name" : "&Courier\\ New字体", "os" : "win32", "view": "<TAB>\:set\\ guifont=Courier\\ New\:h16", "cmd" : ":set guifont=Courier\ New:h16<CR>" },
             \            {"name" : "&Monaco字体",        "os" : "win32", "view": "<TAB>\:set\\ guifont=Monaco\:h14",        "cmd" : ":set guifont=Monaco:h14<CR>" },
             \        
-            \            {"name" : "&Fixedsys字体",      "os" : "unix", "view": "<TAB>\:set\\ guifont=Fixedsys\\ 12",      "cmd" : ":set guifont=Fixedsys\ 12<CR>" },
-            \            {"name" : "&Consolas字体",      "os" : "unix", "view": "<TAB>\:set\\ guifont=Consolas\\ 18",      "cmd" : ":set guifont=Consolas\ 18<CR>" },
-            \            {"name" : "&Courier\\ New字体", "os" : "unix", "view": "<TAB>\:set\\ guifont=Courier\\ New\\ 16", "cmd" : ":set guifont=Courier\ New\ 16<CR>" },
-            \            {"name" : "&Monaco字体",        "os" : "unix", "view": "<TAB>\:set\\ guifont=Monaco\\ 14",        "cmd" : ":set guifont=Monaco\ 14<CR>" },
+            \            {"name" : "&DejaVu\\ Sans\\ Mono\\ 12字体", "os" : "unix", "view": "<TAB>\:set\\ guifont=DejaVu\\ Sans\\ Mono\\ 12", "cmd" : ":set guifont=DejaVu\\ Sans\\ Mono\\ 12<CR>" },
+            \            {"name" : "&DejaVu\\ Sans\\ Mono\\ 16字体", "os" : "unix", "view": "<TAB>\:set\\ guifont=DejaVu\\ Sans\\ Mono\\ 16", "cmd" : ":set guifont=DejaVu\\ Sans\\ Mono\\ 16<CR>" },
+            \            {"name" : "&Ubuntu\\ Mono字体", "os" : "unix", "view": "<TAB>\:set\\ guifont=Ubuntu\\ Mono\\ 16", "cmd" : ":set guifont=Ubuntu\\ Mono\\ 16<CR>" },
             \        
             \            {"name" : "-SEP1-" ,            "os" : "all", "view": "",                                        "cmd" : "<Nop>" },
             \            {"name" : "&desert主题",        "os" : "all", "view": "<TAB>\:colo\\ desert",                    "cmd" : ":colo desert<CR>" },
@@ -57,8 +56,8 @@ let g:menu_list = [
             \    [
             \        "M杂项",
             \        [
-            \            {"name" : "调用C(&M)D",                 "os" : "all", "view": "<Tab>\:!cmd\\ /K\\ 目录", "cmd" : ":!start cmd /K \"chcp 936 && pushd expand('%:p:h')\"<CR>" },
-            \            {"name" : "调用(&C)onEmu64",            "os" : "all", "view": "<Tab>\:!ConEmu64",        "cmd" : ":!start C:/Program Files/ConEmu/ConEmu64.exe -run cmd /K pushd expand('%:p:h')<CR>" },
+            \            {"name" : "调用C(&M)D",                 "os" : "win32", "view": "<Tab>\:!cmd\\ /K\\ 目录", "cmd" : ":!start cmd /K \"chcp 936 && pushd expand('%:p:h')\"<CR>" },
+            \            {"name" : "调用(&C)onEmu64",            "os" : "win32", "view": "<Tab>\:!ConEmu64",        "cmd" : ":!start C:/Program Files/ConEmu/ConEmu64.exe -run cmd /K pushd expand('%:p:h')<CR>" },
             \            {"name" : "查找所有(&T)ag",             "os" : "all", "view": "<Tab>\:tselect",          "cmd" : ":tselect <CR>" },
             \            {"name" : "日历(&H)",                   "os" : "all", "view": "<Tab>\:CalendarH",        "cmd" : ":CalendarH <CR>" },
             \            {"name" : "查看编码(&V)",               "os" : "all", "view": "",                        "cmd" : ":set fileencoding<CR><CR>" },
