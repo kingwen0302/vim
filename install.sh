@@ -26,8 +26,10 @@ if [ "${CUR_DIR}" == "" ]; then
 CUR_DIR=$(cd $(dirname $0); pwd)
 fi
 cd ${CUR_DIR} && mkdir -p bundle
-CENTOS_DEPENDANT="git vim ctags tar bzip2 python-devel cmake gcc-c++ sdcv"
-DEBIAN_DEPENDANT="git vim vim-nox tar bzip2 ctags python-dev cmake gcc sdcv"
+## CENTOS_DEPENDANT="git vim ctags tar bzip2 python-devel cmake gcc-c++ sdcv"
+## DEBIAN_DEPENDANT="git vim vim-nox tar bzip2 ctags python-dev cmake gcc sdcv"
+CENTOS_DEPENDANT="git vim ctags tar bzip2 python-devel the_silver_searcher"
+DEBIAN_DEPENDANT="git vim vim-nox tar bzip2 ctags python-dev the_silver_searcher"
 ## debian
 if [[ "$(cat /proc/version | grep debian)" != "" ]]; then
 sudo apt install ${DEBIAN_DEPENDANT} -y
@@ -46,10 +48,10 @@ mkdir -p ${CUR_DIR}/Plug/vim-plug/autoload
 cp ${CUR_DIR}/Plug/vim-plug/plug.vim ${CUR_DIR}/Plug/vim-plug/autoload
 
 ## 增加英汉字典
-sudo mkdir -p /usr/share/stardict/dic
-wget -O dict.tar.bz2 http://abloz.com/huzheng/stardict-dic/zh_CN/stardict-stardict1.3-2.4.2.tar.bz2
-sudo tar -xvjf dict.tar.bz2 -C /usr/share/stardict/dic
-rm dict.tar.bz2 -f
+## sudo mkdir -p /usr/share/stardict/dic
+## wget -O dict.tar.bz2 http://abloz.com/huzheng/stardict-dic/zh_CN/stardict-stardict1.3-2.4.2.tar.bz2
+## sudo tar -xvjf dict.tar.bz2 -C /usr/share/stardict/dic
+## rm dict.tar.bz2 -f
 
 cat > ~/.vimrc << EOF
 let g:my_vimrc_dir = "${CUR_DIR}"
