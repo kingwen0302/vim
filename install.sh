@@ -25,7 +25,6 @@
 if [ "${CUR_DIR}" == "" ]; then 
 CUR_DIR=$(cd $(dirname $0); pwd)
 fi
-cd ${CUR_DIR} && mkdir -p bundle
 ## CENTOS_DEPENDANT="git vim ctags tar bzip2 python-devel cmake gcc-c++ sdcv"
 ## DEBIAN_DEPENDANT="git vim vim-nox tar bzip2 ctags python-dev cmake gcc sdcv"
 CENTOS_DEPENDANT="git vim ctags tar bzip2 python-devel the_silver_searcher"
