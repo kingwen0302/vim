@@ -48,7 +48,7 @@ Plug 'https://github.com/vim-scripts/TaskList.vim.git'
 Plug 'https://github.com/kingwen0302/my_vim_plugin.git'
 Plug 'https://github.com/vim-scripts/matrix.vim--Yang.git'
 Plug 'https://github.com/vim-scripts/bash-support.vim.git'
-Plug 'https://github.com/elixir-lang/vim-elixir.git'
+Plug 'https://github.com/elixir-editors/vim-elixir.git'
 Plug 'https://github.com/vim-scripts/genutils.git'
 if has('win32')
     Plug 'https://github.com/kingwen0302/Tortoise.git'
@@ -111,6 +111,9 @@ Plug 'KabbAmine/zeavim.vim', {'on': [
 			\ ]}
 
 Plug 'dyng/ctrlsf.vim'
+Plug 'https://github.com/PProvost/vim-ps1.git'
+Plug 'https://github.com/tomlion/vim-solidity.git'
+Plug 'https://github.com/dmdque/solidity.vim.git'
 
 call plug#end()
 filetype plugin indent on
