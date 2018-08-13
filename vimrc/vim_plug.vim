@@ -62,7 +62,7 @@ Plug 'https://github.com/skywind3000/asyncrun.vim.git'
 Plug 'racer-rust/vim-racer'
 Plug 'rust-lang/rust.vim'
 
-Plug 'https://github.com/mhinz/vim-grepper.git'
+Plug 'https://github.com/mhinz/vim-grepper.git', {'branch': 'v.1.4'}
 
 Plug 'https://github.com/altercation/vim-colors-solarized.git'
 Plug 'https://github.com/tpope/vim-surround.git'

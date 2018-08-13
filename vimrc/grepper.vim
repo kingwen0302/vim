@@ -1,3 +1,19 @@
+let g:grepper_sorted_tools = ['rg', 'ag', 'grep']
+
+" 自定义排序
+function! MySort(f, s) 
+    let f_i = index(g:grepper_sorted_tools, a:f)
+    let s_i = index(g:grepper_sorted_tools, a:s)
+    if (f_i == -1)
+        let f_i = len(g:grepper_sorted_tools)
+    endif
+    if (s_i == -1)
+        let s_i = len(g:grepper_sorted_tools)
+    endif
+
+    return f_i == s_i ? 0 : f_i > s_i ? 1 : -1
+endfunction
+
 let is_has = globpath(&rtp, "autoload/grepper.vim")
 if is_has != ""
     runtime autoload/grepper.vim
@@ -10,20 +26,25 @@ if is_has != ""
     " 同步操作
     let w:testing = 1
 
+    let g:grepper.tools = sort(g:grepper.tools, "MySort")
+
     let g:grepper.file_list = g:file_type_list
 
     let g:grepper.ag.file_list = []
     let g:grepper.grep.file_list = []
     let g:grepper.findstr.file_list = []
+    let g:grepper.rg.file_list = []
     for i in g:grepper.file_list
         call add(g:grepper.ag.file_list, ".*." . i)
         call add(g:grepper.grep.file_list, "--include=*." . i)
         call add(g:grepper.findstr.file_list, "*." . i)
+        call add(g:grepper.rg.file_list, "--type-add mytype:*." . i)
     endfor
 
     let g:grepper.ag.file_list = join(g:grepper.ag.file_list, "|")
     let g:grepper.grep.file_list = join(g:grepper.grep.file_list, " ")
     let g:grepper.findstr.file_list = join(g:grepper.findstr.file_list, " ")
+    let g:grepper.rg.file_list = join(g:grepper.rg.file_list, " ")
 
     " let g:grepper.tools = ['ag', 'ack', 'grep', 'findstr', 'rg', 'pt', 'sift', 'git']
 
@@ -55,6 +76,9 @@ if is_has != ""
     " let g:grepper.grep.grepprg .= " -nraHwi --include=*.[ehpc][rhtf][lpmg]"
     " let g:grepper.grep.grepprg .= " -nraHwi --include=*.erl --include=*.hrl --include=*.cfg --include=*.php --include=*.htm --include=*.vim"
     let g:grepper.grep.grepprg .= " -nraHwi " . g:grepper.grep.file_list
+
+    " 使用ripgrep
+    let g:grepper.rg.grepprg .= " -wi " . g:grepper.rg.file_list . " --type mytype"
 
     " 使用findstr
     let g:grepper.findstr.grepprg .= " " . g:grepper.findstr.file_list
