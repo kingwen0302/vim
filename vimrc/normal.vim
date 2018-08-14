@@ -85,6 +85,7 @@ if has('gui_running')
     set cursorline   " 高亮当前行
     set cursorcolumn " 高亮当前列 
     set cc=80        " 显示对齐线
+    set mouse=a      " 增加鼠标支持
 endif
 
 set tags=.vim.tags;
@@ -103,6 +104,3 @@ set wcm=<C-Z>
 set fileformats=unix,dos
 
 let mapleader = ","
-
-" 增加鼠标支持
-set mouse=a
