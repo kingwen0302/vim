@@ -1,3 +1,4 @@
+" let g:grepper_sorted_tools = ['rg', 'ag', 'grep']
 let g:grepper_sorted_tools = ['rg', 'ag', 'grep']
 
 " 自定义排序
@@ -34,14 +35,17 @@ if is_has != ""
     let g:grepper.grep.file_list = []
     let g:grepper.findstr.file_list = []
     let g:grepper.rg.file_list = []
+    let g:grepper.pt.file_list =[]
     for i in g:grepper.file_list
         call add(g:grepper.ag.file_list, ".*." . i)
+        call add(g:grepper.pt.file_list, ".*." . i)
         call add(g:grepper.grep.file_list, "--include=*." . i)
         call add(g:grepper.findstr.file_list, "*." . i)
         call add(g:grepper.rg.file_list, "--type-add mytype:*." . i)
     endfor
 
     let g:grepper.ag.file_list = join(g:grepper.ag.file_list, "|")
+    let g:grepper.pt.file_list = join(g:grepper.pt.file_list, "|")
     let g:grepper.grep.file_list = join(g:grepper.grep.file_list, " ")
     let g:grepper.findstr.file_list = join(g:grepper.findstr.file_list, " ")
     let g:grepper.rg.file_list = join(g:grepper.rg.file_list, " ")
@@ -80,6 +84,9 @@ if is_has != ""
     " 使用ripgrep
     let g:grepper.rg.grepprg .= " -wi " . g:grepper.rg.file_list . " --type mytype"
 
+    " 使用pt(the_platinum_searcher)
+    let g:grepper.pt.grepprg .= " /i /w /G '" . g:grepper.pt.file_list . "'"
+
     " 使用findstr
-    let g:grepper.findstr.grepprg .= " " . g:grepper.findstr.file_list
+    let g:grepper.findstr.grepprg .= ".null " . g:grepper.findstr.file_list
 endif
