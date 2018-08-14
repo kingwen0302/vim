@@ -4,7 +4,7 @@
 
 1. 依赖  
 安装**相同架构**的[vim](https://github.com/vim/vim-win32-installer/releases)、[Python 2.7](www.python.org)、[Git](https://git-for-windows.github.io)、[ctags](https://sourceforge.net/projects/ctags/)、[TortoiseSVN](http://subversion.tigris.org)、[LUA](http://lua-users.org/wiki/LuaBinaries)  
-可选安装`the_silver_searcher(ag)`、`grep`  
+可选安装[the_silver_searcher(ag)](https://github.com/ggreer/the_silver_searcher)、`grep`, [ripgrep](https://github.com/BurntSushi/ripgrep)  
 并加入`path`环境变量中  
 
 1. 执行`install.sh`  

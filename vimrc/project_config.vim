@@ -1,5 +1,13 @@
 " 项目常用svn目录
 let s:all_proj_list_src = [
+            \ { "own_proj": ["syjy"],               "name" : "[公司]手游剑雨-开发1",       "path": "E:/syjy/server/trunk"},
+            \ { "own_proj": ["syjy"],               "name" : "[公司]手游剑雨-开发2",       "path": "E:/syjy/server/trunk_func_boss_log"},
+            \ { "own_proj": ["syjy"],               "name" : "[公司]手游剑雨-国内稳定服",       "path": "E:/syjy/server/trunk_cn_s"},
+            \ { "own_proj": ["syjy"],               "name" : "[公司]手游剑雨-越南稳定服",       "path": "E:/syjy/server/trunk_vng_s"},
+            \ { "own_proj": ["syjy"],               "name" : "[公司]手游剑雨-台湾稳定服",       "path": "E:/syjy/server/trunk_tw_s"},
+            \ { "own_proj": ["syjy"],               "name" : "[公司]jysy_vn_2102600",       "path": "E:/syjy/server/branch_vng/jysy_vn_2102600"},
+            \ { "own_proj": ["syjy"],               "name" : "[公司]手游剑雨-协议-LUA",  "path": "E:/syjy/server/pt/src_proto"},
+            \ { "own_proj": ["syjy"],               "name" : "[公司]手游剑雨-协议",  "path": "E:/syjy/public/前后端协议文档"},
             \ { "own_proj": ["qqjy", "s7yy"],       "name" : "[公司]QQJY_67版本",    "path": "E:/qqjy/qqjy_server"},
             \ { "own_proj": ["qqjy"],               "name" : "[公司]QQJY_协议",      "path": "E:/qqjy/public/proto"},
             \ { "own_proj": ["qqjy"],               "name" : "[公司]QQJY_006501000", "path": "E:/qqjy/qqjy_branch/qqjy_cn_006501000"},
@@ -20,6 +28,7 @@ let s:all_proj_list_src = [
             \ { "own_proj": ["person"],             "name" : "[个人]rust",    "path": "c:/users/mingilin/rust_learn/project"},
             \
             \ { "own_proj": ["common"],             "name" : "[公共]VIM配置", "path": g:my_vimrc_dir . "/vimrc"},
+            \ { "own_proj": ["common"],             "name" : "[公共]SSH配置", "path": "E:/my_ssh"},
             \]
 
 function! ConvertPath(proj)
@@ -81,8 +90,9 @@ elseif exists("g:select_proj") && g:select_proj == 2
 " ALL
 " gvim.exe
 else
-    let g:proj_company = GetProjects(g:all_proj_list, "qqjy")
-    let g:proj_company += GetProjects(g:all_proj_list, "s7yy")
+    let g:proj_company = GetProjects(g:all_proj_list, "syjy")
+    let g:proj_company += GetProjects(g:all_proj_list, "qqjy")
+    " let g:proj_company += GetProjects(g:all_proj_list, "s7yy")
     let g:proj_company = Uniq(g:proj_company)
 endif
 
