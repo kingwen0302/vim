@@ -1,3 +1,5 @@
+%% coding: $CODING
+
 -module($MODULENAME).
 
 -behaviour(gen_fsm).
