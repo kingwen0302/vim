@@ -46,6 +46,10 @@ function! SearchWordByGrep()
     " 使用grep查询
     " 飞一般的速度
     let wd = expand("<cword>")
+    if wd == ""
+        echo "搜素字符串为空"
+        return
+    endif
     echo "searching " . wd . ", wait a moment ..."
     let len1 = strlen(wd)
     let len2 = strlen(substitute(wd, ".", "x", "g"))
@@ -62,6 +66,10 @@ endfunction
 function! SearchWordByVimGrep()
     call SetProjectRoot()
     let wd = expand("<cword>")
+    if wd == ""
+        echo "搜素字符串为空"
+        return
+    endif
     echo "searching " . wd . ", wait a moment ..."
     exe "vimgrep \"\\<" . wd . "\\>\" " . VimGrepFileType()
 endfunction
