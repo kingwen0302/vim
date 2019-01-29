@@ -114,6 +114,7 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'https://github.com/PProvost/vim-ps1.git'
 Plug 'https://github.com/tomlion/vim-solidity.git'
 Plug 'https://github.com/dmdque/solidity.vim.git'
+Plug 'https://github.com/mattn/vimtweak.git'
 
 call plug#end()
 filetype plugin indent on
