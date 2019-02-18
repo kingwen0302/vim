@@ -1,5 +1,5 @@
 " let g:grepper_sorted_tools = ['rg', 'ag', 'grep']
-let g:grepper_sorted_tools = ['rg', 'ag', 'grep']
+let g:grepper_sorted_tools = ['ag', 'grep']
 
 " 自定义排序
 function! MySort(f, s) 

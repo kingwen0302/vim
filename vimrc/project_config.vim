@@ -1,22 +1,25 @@
 " 项目常用svn目录
 let s:all_proj_list_src = [
-            \ { "own_proj": ["syjy"],               "name" : "[公司]手游剑雨-开发1",       "path": "E:/syjy/server/trunk"},
-            \ { "own_proj": ["syjy"],               "name" : "[公司]手游剑雨-开发2",       "path": "E:/syjy/server/trunk_func_boss_log"},
-            \ { "own_proj": ["syjy"],               "name" : "[公司]手游剑雨-国内稳定服",       "path": "E:/syjy/server/trunk_cn_s"},
-            \ { "own_proj": ["syjy"],               "name" : "[公司]手游剑雨-越南稳定服",       "path": "E:/syjy/server/trunk_vng_s"},
-            \ { "own_proj": ["syjy"],               "name" : "[公司]手游剑雨-台湾稳定服",       "path": "E:/syjy/server/trunk_tw_s"},
-            \ { "own_proj": ["syjy"],               "name" : "[公司]jysy_vn_2102600",       "path": "E:/syjy/server/branch_vng/jysy_vn_2102600"},
-            \ { "own_proj": ["syjy"],               "name" : "[公司]手游剑雨-协议-LUA",  "path": "E:/syjy/server/pt/src_proto"},
-            \ { "own_proj": ["syjy"],               "name" : "[公司]手游剑雨-协议",  "path": "E:/syjy/public/前后端协议文档"},
-            \ { "own_proj": ["qqjy", "s7yy"],       "name" : "[公司]QQJY_67版本",    "path": "E:/qqjy/qqjy_server"},
-            \ { "own_proj": ["qqjy"],               "name" : "[公司]QQJY_协议",      "path": "E:/qqjy/public/proto"},
-            \ { "own_proj": ["qqjy"],               "name" : "[公司]QQJY_006501000", "path": "E:/qqjy/qqjy_branch/qqjy_cn_006501000"},
-            \ { "own_proj": ["qqjy"],               "name" : "[公司]QQJY_版署服",    "path": "E:/qqjy/server/branches/cymmo_20160930_002610000"},
-            \ { "own_proj": ["qqjy"],               "name" : "[公司]QQJY_策划配置",  "path": "E:/qqjy/plan"},
+            \ { "own_proj": ["sgh5"],               "name" : "[公司]sgh5-trunk",       "path": "E:/sgh5/server/trunk"},
+            \ { "own_proj": ["sg01"],               "name" : "[公司]sg01-trunk",       "path": "E:/sg01/server/trunk"},
+            \ { "own_proj": ["sg01"],               "name" : "[公司]sg01-proto",       "path": "E:/sg01/public/协议文档"},
+            \ { "own_proj": ["sg01"],               "name" : "[公司]sg01-from",       "path": "E:/trunk"},
+            \ { "own_proj": ["sysn"],               "name" : "[公司]sysn-trunk",       "path": "E:/sysn/server/trunk"},
+            \ { "own_proj": ["syjy"],               "name" : "[公司]jysy-trunk",       "path": "E:/syjy/server/trunk"},
+            \ { "own_proj": ["syjy"],               "name" : "[公司]jysy-cn_s",       "path": "E:/syjy/server/trunk_cn_s"},
+            \ { "own_proj": ["syjy"],               "name" : "[公司]jysy-vng_s",       "path": "E:/syjy/server/trunk_vng_s"},
+            \ { "own_proj": ["syjy"],               "name" : "[公司]jysy-tw_s",       "path": "E:/syjy/server/trunk_tw_s"},
+            \ { "own_proj": ["syjy"],               "name" : "[公司]jysy-proto-LUA",  "path": "E:/syjy/server/pt/src_proto"},
+            \ { "own_proj": ["syjy"],               "name" : "[公司]jysy-proto",  "path": "E:/syjy/public/前后端协议文档"},
+            \ { "own_proj": ["qqjy", "s7yy"],       "name" : "[公司]qqjy_67版本",    "path": "E:/qqjy/qqjy_server"},
+            \ { "own_proj": ["qqjy"],               "name" : "[公司]qqjy_协议",      "path": "E:/qqjy/public/proto"},
+            \ { "own_proj": ["qqjy"],               "name" : "[公司]qqjy_006501000", "path": "E:/qqjy/qqjy_branch/qqjy_cn_006501000"},
+            \ { "own_proj": ["qqjy"],               "name" : "[公司]qqjy_版署服",    "path": "E:/qqjy/server/branches/cymmo_20160930_002610000"},
+            \ { "own_proj": ["qqjy"],               "name" : "[公司]qqjy_策划配置",  "path": "E:/qqjy/plan"},
             \
             \ { "own_proj": ["s7yy"],               "name" : "[公司]S7YY_服务端",    "path": "E:/s7yy/s7yy_server"},
             \
-            \ { "own_proj": ["jy", "qqjy"],         "name" : "[公司]JY_服务端",      "path": "E:/jy_server/trunk/cymmo"},
+            \ { "own_proj": ["jy", "qqjy"],         "name" : "[公司]JY_trunk",      "path": "E:/jy_server/trunk/cymmo"},
             \ { "own_proj": ["jy"],                 "name" : "[公司]JY_web",         "path": "E:/jy_server/www"},
             \
             \ { "own_proj": ["my", "qqjy", "s7yy"], "name" : "[公司]MY_web",         "path": "E:/web"},
@@ -79,20 +82,18 @@ function! Uniq(src_list)
     return ret_list
 endfunction
 
-" QQJY
-" gvim.exe --cmd "let g:select_proj=1"
-if exists("g:select_proj") && g:select_proj == 1
-    let g:proj_company = GetProjects(g:all_proj_list, "qqjy")
-" S7YY
-" gvim.exe --cmd "let g:select_proj=1"
-elseif exists("g:select_proj") && g:select_proj == 2   
-    let g:proj_company = GetProjects(g:all_proj_list, "s7yy")
+" gvim.exe --cmd "let g:select_proj='qqjy'"
+" vim.exe --cmd "let g:select_proj='qqjy'"
+if exists("g:select_proj")
+    let g:proj_company = GetProjects(g:all_proj_list, g:select_proj)
 " ALL
-" gvim.exe
 else
-    let g:proj_company = GetProjects(g:all_proj_list, "syjy")
+    let g:proj_company = GetProjects(g:all_proj_list, "sgh5")
+    let g:proj_company += GetProjects(g:all_proj_list, "sg01")
+    let g:proj_company += GetProjects(g:all_proj_list, "syjy")
     let g:proj_company += GetProjects(g:all_proj_list, "qqjy")
-    " let g:proj_company += GetProjects(g:all_proj_list, "s7yy")
+    let g:proj_company += GetProjects(g:all_proj_list, "sysn")
+    let g:proj_company += GetProjects(g:all_proj_list, "s7yy")
     let g:proj_company = Uniq(g:proj_company)
 endif
 
