@@ -28,5 +28,6 @@ map <C-F9> :SearchWordDialog<CR>
 map <F10> :MyPopup<CR>
 map <F11> :ChangeProject<CR>
 map <F12> :LeaderfOrCtrlp<CR>
+map <C-F10> :ColorRand<CR>
 map <C-Enter> :MruCwd<CR>
 map <S-Enter> :MruAll<CR>

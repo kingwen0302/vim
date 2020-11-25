@@ -1,6 +1,9 @@
 " 项目常用svn目录
 let s:all_proj_list_src = [
+            \ { "own_proj": ["sgh5"],               "name" : "[公司]mytg",       "path": "E:/sgh5/server/trunk_ceshi/mytg"},
             \ { "own_proj": ["sgh5"],               "name" : "[公司]sgh5-trunk",       "path": "E:/sgh5/server/trunk"},
+            \ { "own_proj": ["sgh5"],               "name" : "[公司]sgh5-trunk_2",       "path": "E:/sgh5/server/trunk_2"},
+            \ { "own_proj": ["sgh5"],               "name" : "[公司]sgh5-协议文档",    "path": "E:/sgh5/public/protocol"},
             \ { "own_proj": ["sg01"],               "name" : "[公司]sg01-trunk",       "path": "E:/sg01/server/trunk"},
             \ { "own_proj": ["sg01"],               "name" : "[公司]sg01-proto",       "path": "E:/sg01/public/协议文档"},
             \ { "own_proj": ["sg01"],               "name" : "[公司]sg01-from",       "path": "E:/trunk"},

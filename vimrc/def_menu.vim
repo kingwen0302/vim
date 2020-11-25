@@ -46,8 +46,8 @@ let g:menu_list = [
             \            {"name" : "随机主题",           "os" : "all", "view": "<TAB>\:ColorRand",                        "cmd" : ":ColorRand<CR>" },
             \        
             \            {"name" : "-SEP2-" ,            "os" : "win32", "view": "", "cmd" : "<Nop>" },
-            \            {"name" : "&透明225",           "os" : "win32", "view": "", "cmd" : ":call libcallnr('vimtweak.dll', 'SetAlpha', 225) <CR>" },
-            \            {"name" : "&不透明",            "os" : "win32", "view": "", "cmd" : ":call libcallnr('vimtweak.dll', 'SetAlpha', 255) <CR>" },
+            \            {"name" : "&透明220",           "os" : "win32", "view": "", "cmd" : ":VimTweakSetAlpha 220 <CR>" },
+            \            {"name" : "&不透明",            "os" : "win32", "view": "", "cmd" : ":VimTweakSetAlpha 255 <CR>" },
             \            {"name" : "最前端显示",         "os" : "win32", "view": "", "cmd" : ":call libcallnr('vimtweak.dll', 'EnableTopMost', 1) <CR>" },
             \            {"name" : "最前端取消",         "os" : "win32", "view": "", "cmd" : ":call libcallnr('vimtweak.dll', 'EnableTopMost', 0) <CR>" },
             \            {"name" : "&Cygwin",            "os" : "win32", "view": "", "cmd" : ":ConqueTerm C:\\cygwin64\\Cygwin.bat<CR>" },

@@ -59,9 +59,6 @@ Plug 'https://github.com/luochen1990/rainbow.git'
 Plug 'https://github.com/skywind3000/asyncrun.vim.git'
 " Plug 'https://github.com/editorconfig/editorconfig-vim.git'
 
-Plug 'racer-rust/vim-racer'
-Plug 'rust-lang/rust.vim'
-
 Plug 'https://github.com/mhinz/vim-grepper.git', {'branch': 'v.1.4'}
 
 Plug 'https://github.com/altercation/vim-colors-solarized.git'
@@ -115,6 +112,18 @@ Plug 'https://github.com/PProvost/vim-ps1.git'
 Plug 'https://github.com/tomlion/vim-solidity.git'
 Plug 'https://github.com/dmdque/solidity.vim.git'
 Plug 'https://github.com/mattn/vimtweak.git'
+
+Plug 'https://github.com/natebosch/vim-lsc.git'
+
+" Plug 'https://github.com/vim-syntastic/syntastic.git'
+Plug 'racer-rust/vim-racer'
+Plug 'rust-lang/rust.vim'
+
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'hyhugh/coc-erlang_ls', {'do': 'yarn install --frozen-lockfile'}
+
+Plug 'https://github.com/vim-scripts/vim-bgimg.git'
+
 
 call plug#end()
 filetype plugin indent on

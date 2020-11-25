@@ -8,6 +8,9 @@
 "" 开启rust的自动reformat的功能
 let g:rustfmt_autosave = 1
 
+let g:syntastic_rust_checkers = ['cargo']
+
+
 "" 手动补全和定义跳转
 set hidden
 "" 这一行指的是你编译出来的racer所在的路径
