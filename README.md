@@ -81,3 +81,6 @@ NORMAL模式下：`Ctrl+v`或者 `Ctrl-q`(windows) -> hjkl选择 -> `yy`|`dd` ->
 `vim.exe --cmd "let $HOME = 'C:/Users/用户名/.config/vim1'"`  
 `vim.exe --cmd "let $HOME = 'C:/Users/用户名/.config/vim2'"`  
 将`vimrc`放到`vimX`目录下
+
+## neovim
+`_vimrc` => `C:\Users\USERNAME\AppData\Local\nvim\init.vim`
