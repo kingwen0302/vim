@@ -29,8 +29,18 @@ function! GuiTabLabel()
       let name = '[No Name]'
     endif
   else
-    " get only the file name
-    let name = fnamemodify(name,":t")
+    call UpProjectRoot()
+
+    let pj_name = ''
+    let f1 = fnamemodify(g:project_root, ":p:gs?/?\\?")
+    for i in g:proj_search
+        let f2 = fnamemodify(i['path'], ":p:gs?/?\\?")
+        if f1 == f2
+            let pj_name = i['name']
+            break
+        endif
+    endfor
+    let name = pj_name . " | " . fnamemodify(name,":t")
   endif
   let label .= name
   " Append the number of windows in the tab page
