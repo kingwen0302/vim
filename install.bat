@@ -3,7 +3,7 @@
 set CUR_DIR=%~dp0
 mkdir %CUR_DIR%\Plug
 
-git clone https://github.com/junegunn/vim-plug.git %CUR_DIR%\Plug\vim-plug
+git clone https://github.mingilin.com/junegunn/vim-plug.git %CUR_DIR%\Plug\vim-plug
 mkdir %CUR_DIR%\Plug\vim-plug\autoload
 cp %CUR_DIR%\Plug\vim-plug\plug.vim %CUR_DIR%\Plug\vim-plug\autoload
 
