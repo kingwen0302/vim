@@ -14,6 +14,7 @@ let g:menu_list = [
             \            {"name" : "(&D)IFF",   "os" : "all", "view": "<TAB>\:SVN\\ diff",   "cmd" : ":SVN diff %<CR>" },
             \            {"name" : "(&C)OMMIT", "os" : "all", "view": "<TAB>\:SVN\\ commit", "cmd" : ":SVN commit %<CR>" },
             \            {"name" : "(&L)OG",    "os" : "all", "view": "<TAB>\:SVN\\ log",    "cmd" : ":SVN log %<CR>" },
+            \            {"name" : "(&B)lame",  "os" : "all", "view": "<TAB>\:SVN\\ blame",  "cmd" : ":MySVNBlame <CR>" },
             \        ]
             \    ],
             \    [
